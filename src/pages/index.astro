@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+  <div class="centered-wrapper">
+    <div class="card about-card">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Welcome</h2>
+          <p>My name is Gavin and I'm a game developer and technical artist based in Adelaide, South Australia. I work across games, 3D, and VFX to bridge creative and technical goals. Feel free to explore my projects. I'm always building something new.</p>
+        </div>
+        <img src="/gavin.png" alt="Gavin Piliczky" class="profile-pic" />
+      </div>
+    </div>
+
+    <!-- This section is floated toward the bottom -->
+    <div class="lower-half-section">
+  
+      <div class="card-grid">
+        <a href="/games" class="nav-card fade-in fade-delay-2">
+          <img src="/icons/joystick.png" alt="Games Icon" class="card-icon" />
+          <b>Games</b>
+        </a>
+        <a href="/3d" class="nav-card fade-in fade-delay-3">
+          <img src="/icons/3d-model.png" alt="3D Icon" class="card-icon" />
+          <b>3D Projects</b>
+        </a>
+        <a href="/vfx" class="nav-card fade-in fade-delay-4">
+          <img src="/icons/movie.png" alt="VFX Icon" class="card-icon" />
+          <b>VFX</b>
+        </a>
+      </div>
+    </div>
+
+  
+</Layout>

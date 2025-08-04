@@ -1,0 +1,54 @@
+---
+import '../styles/styles.css';
+const { title } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+
+    <script type="module">
+      import starfield from '../scripts/starfield.js';
+      starfield();
+    </script>
+
+    <div class="stars-container">
+      <div class="stars stars_1"></div>
+      <div class="stars stars_2"></div>
+      <div class="stars stars_3"></div>
+    </div>
+
+    <div class="sun-container">
+      <div class="sun-glow"></div>
+      <div class="sun-half"></div>
+    </div>
+    <div class="mountains"></div>
+    <div class="glow-line"></div>
+
+    <header>
+      <div class="site-name">Gavin Piliczky</div>
+      <h1>{title}</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/games">Games</a>
+        <a href="/3d">3D</a>
+        <a href="/vfx">VFX</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      &copy; {new Date().getFullYear()} Gavin Piliczky
+    </footer>
+  </body>
+</html>

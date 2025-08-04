@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Gavin Piliczky">
+  <section class="about-wrapper">
+    <h1 class="section-heading">Character Sheet</h1>
+
+    <div class="character-sheet">
+      <!-- Character Info -->
+      <div class="card character-card">
+        <div class="character-columns">
+          <div class="column">
+            <h2>Name</h2>
+            <p><strong>Gavin Piliczky</strong></p>
+            <h2>Class</h2>
+            <p>Technical Artist / Game Developer</p>
+            <h2>Location</h2>
+            <p>Adelaide, South Australia</p>
+            <h2>Experience Level</h2>
+            <p>Level 42<br><small>XP: 4120 / 5000</small></p>
+          </div>
+          <div class="column">
+            <h2>Backstory</h2>
+            <p>
+              Once an IT professional navigating networks and servers, Gavin evolved into a creative problem solver wielding both code and design. Now on a quest to bridge art and logic through games, VFX, and 3D pipelines.
+            </p>
+
+            <h2>Traits</h2>
+            <ul>
+              <li>Rapid Prototyper</li>
+              <li>Creative Coder</li>
+              <li>Pipeline Optimizer</li>
+              <li>Visual Storyteller</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="card stats-card">
+        <h2 class="section-heading">Stats</h2>
+
+        <div class="skill-bar" title="Advanced">
+          <span>Unreal Engine</span>
+          <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Advanced">
+          <span>Autodesk Maya</span>
+          <div class="bar"><div class="fill" style="width: 85%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Advanced">
+          <span>Blender</span>
+          <div class="bar"><div class="fill" style="width: 70%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Advanced">
+          <span>Substance Designer / Painter</span>
+          <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Intermediate">
+          <span>Houdini</span>
+          <div class="bar"><div class="fill" style="width: 50%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Intermediate">
+          <span>Nuke</span>
+          <div class="bar"><div class="fill" style="width: 50%"></div></div>
+        </div>
+
+        <div class="skill-bar" title="Advanced">
+          <span>GameMaker Studio 2</span>
+          <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+        <div class="skill-bar" title="Advanced">
+          <span>Adobe Suite</span>
+          <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+      </div>
+
+      <!-- Achievements / Qualifications -->
+      <div class="card qualifications-card">
+        <h2>Achievements</h2>
+        <ul class="badge-list">
+          <li>Advanced Diploma of Screen and Media (Content Creation & Design)</li>
+          <li>Diploma of Screen and Media (Animation, Gaming, and VFX)</li>
+          <li>Certificate IV in Information Technology (Client Support)</li>
+          <li>Bachelor of Creative Arts (Visual Effects and Entertainment Design) (In Progress)</li>
+          <li>Former Business Owner</li>
+          <li>15+ Years IT Experience in Service Desk Roles</li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.character-sheet {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.character-card {
+  flex: 0 0 85%;
+}
+
+.stats-card,
+.qualifications-card {
+  flex: 0 0 40%;
+}
+
+.character-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.character-columns .column {
+  flex: 1;
+}
+
+.badge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.badge-list li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #00aaff;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+</style>

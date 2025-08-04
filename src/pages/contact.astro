@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/contact.css';
+---
+
+<Layout title="Contact">
+  <section class="card fade-in fade-delay-1">
+    <h2>Contact Me</h2>
+    <p>I'd love to hear from you! Reach out via email or connect on social media:</p>
+
+    <form 
+      action="https://formsubmit.co/gavin.piliczky@live.com.au" 
+      method="POST"
+      class="contact-form"
+    >
+      <input type="hidden" name="_subject" value="New Contact Form Submission" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <label>
+        Name:
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Message:
+        <textarea name="message" rows="10" required></textarea>
+      </label>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="social-links">
+      <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.artstation.com/your-artstation" target="_blank" rel="noopener">ArtStation</a>
+      <a href="mailto:gavin.piliczky@live.com.au">Email Me</a>
+    </div>
+  </section>
+</Layout>
