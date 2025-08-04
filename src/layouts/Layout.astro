@@ -10,18 +10,15 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
+
+    
+    <div class="overlay-noise"></div>
+    <div class="overlay-vhs"></div>
+    <div class="vhs-line"></div>
+
+
     <canvas id="starfield"></canvas>
-
-    <script type="module">
-      import starfield from '../scripts/starfield.js';
-      starfield();
-    </script>
-
-    <div class="stars-container">
-      <div class="stars stars_1"></div>
-      <div class="stars stars_2"></div>
-      <div class="stars stars_3"></div>
-    </div>
+    <script type="module" src="/scripts/starfield.js"></script>
 
     <div class="sun-container">
       <div class="sun-glow"></div>

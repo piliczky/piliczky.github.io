@@ -35,34 +35,7 @@ function spawnStar(initial = false) {
 }
 
 
-function updateStars() {
-  ctx.clearRect(0, 0, width, height);
 
-  for (let i = 0; i < stars.length; i++) {
-    const star = stars[i];
-    star.distance += star.speed;
-
-const px = width / 2 + star.offsetX + Math.cos(star.angle) * star.distance;
-const py = height / 2 + star.offsetY - Math.sin(star.angle) * star.distance;
-
-    if (py > height / 2) continue;
-
-    // Calculate size based on how far it is from the center
-    const size = Math.min(2, (star.distance / maxDistance) * 3);
-
-    // Fade in
-    star.opacity = Math.min(1, star.opacity + 0.02);
-
-    ctx.beginPath();
-    ctx.arc(px, py, size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-    ctx.fill();
-
-    if (px < 0 || px > width || py < 0) {
-      stars[i] = spawnStar(false); // new random position
-    }
-  }
-}
 
 function animate() {
   updateStars();

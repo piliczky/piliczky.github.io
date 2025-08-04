@@ -481,3 +481,99 @@ body::before {
 }
 
 
+
+
+/* 🔮 Glass blur overlay */
+.overlay-glass {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  backdrop-filter: blur(2px) brightness(1.05);
+  background: rgba(255, 0, 255, 0.05); /* optional tint */
+}
+
+/* 📺 Animated noise overlay */
+.overlay-noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/noise.png'); /* use transparent PNG */
+  background-size: cover;
+  opacity: 0.05;
+  z-index: 2;
+  animation: flicker 1.2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.04; }
+  100% { opacity: 0.08; }
+}
+
+/* 🌈 Glow wash */
+.overlay-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255, 0, 255, 0.04), transparent 70%);
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+  z-index: 3;
+}
+
+@keyframes pulseGlow {
+  from { opacity: 0.02; }
+  to   { opacity: 0.06; }
+}
+
+
+
+
+
+/* VHS Overlay */
+.overlay-vhs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: screen;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  animation: vhsFlicker 0.1s infinite;
+}
+@keyframes vhsFlicker {
+  0%   { transform: translateY(0); opacity: 0.05; }
+  50%  { transform: translateY(1px); opacity: 0.06; }
+  100% { transform: translateY(0); opacity: 0.05; }
+}
+
+
+.vhs-line {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  opacity: 0.1;
+  z-index: 6;
+  animation: glitchLine 2s linear infinite;
+}
+
+@keyframes glitchLine {
+  0% {
+    top: -10%;
+    opacity: 0.05;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    top: 110%;
+    opacity: 0.05;
+  }
+}
