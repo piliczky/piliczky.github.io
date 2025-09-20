@@ -34,9 +34,6 @@ function spawnStar(initial = false) {
   };
 }
 
-
-
-
 function animate() {
   updateStars();
   requestAnimationFrame(animate);
@@ -44,7 +41,7 @@ function animate() {
 
 window.addEventListener('resize', () => {
   resize();
-  createStars(550);
+  createStars(100);
 });
 
 resize();

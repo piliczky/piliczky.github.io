@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const images = Object.values(
+  import.meta.glob<{ default: { src: string } }>(
+    '../../assets/renders/guitar/*.{jpg,png,webp}',
+    { eager: true }
+  )
+);
+---
+
+<Layout title="3D">
+  <h1>3D</h1>
+  <p>This page will showcase various 3D game development and VFX projects I've worked on.</p>
+
+  <section class="gallery">
+    {images.map((img) => (
+      <img
+        src={img.default.src}
+        alt="Guitar render"
+        loading="lazy"
+        onclick={`openLightbox('${img.default.src}')`}
+      />
+    ))}
+  </section>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged render" />
+  </div>
+</Layout>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .gallery img:hover { transform: scale(1.05); }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+  }
+</style>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox').style.display = 'flex';
+    document.getElementById('lightbox-img').src = src;
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
