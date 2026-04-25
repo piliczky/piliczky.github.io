@@ -50,6 +50,11 @@ const { Content } = await render(entry);
 					</div>
 				</div>
 			</main>
+
+		<div class="lightbox" aria-hidden="true" hidden>
+			<button class="lightbox__close" type="button" aria-label="Close image preview">×</button>
+			<img class="lightbox__image" src="" alt="" />
+		</div>
 		</div>
 		<ContactCTA />
 	</div>
@@ -106,6 +111,53 @@ const { Content } = await render(entry);
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
+		cursor: zoom-in;
+		transition: transform var(--theme-transition);
+	}
+
+	.content :global(img:hover) {
+		transform: scale(1.02);
+	}
+
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		display: none;
+		place-items: center;
+		background: rgba(9, 11, 17, 0.88);
+		padding: 2rem;
+		z-index: 50;
+	}
+
+	.lightbox.open {
+		display: grid;
+	}
+
+	.lightbox__image {
+		max-width: 100%;
+		max-height: 100%;
+		border-radius: 1rem;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.lightbox__close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		border: none;
+		background: rgba(255, 255, 255, 0.08);
+		color: var(--gray-100);
+		font-size: 2rem;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		cursor: pointer;
+		backdrop-filter: blur(8px);
+	}
+
+	.lightbox__close:hover,
+	.lightbox__close:focus {
+		background: rgba(255, 255, 255, 0.14);
 	}
 
 	.content :global(blockquote) {
@@ -148,3 +200,39 @@ const { Content } = await render(entry);
 		}
 	}
 </style>
+<script>
+	const lightbox = document.querySelector<HTMLDivElement>('.lightbox');
+	const lightboxImage = lightbox?.querySelector<HTMLImageElement>('.lightbox__image');
+	const closeButton = lightbox?.querySelector<HTMLButtonElement>('.lightbox__close');
+
+	function openLightbox(img: HTMLImageElement) {
+		if (!lightbox || !lightboxImage) return;
+		lightboxImage.src = img.src;
+		lightboxImage.alt = img.alt || 'Expanded image preview';
+		lightbox.classList.add('open');
+		lightbox.hidden = false;
+		lightbox.setAttribute('aria-hidden', 'false');
+	}
+
+	function closeLightbox() {
+		if (!lightbox || !lightboxImage) return;
+		lightbox.classList.remove('open');
+		lightbox.hidden = true;
+		lightbox.setAttribute('aria-hidden', 'true');
+		lightboxImage.src = '';
+	}
+
+	document.querySelectorAll<HTMLImageElement>('.content img').forEach((img) => {
+		img.addEventListener('click', () => openLightbox(img));
+	});
+
+	closeButton?.addEventListener('click', closeLightbox);
+	lightbox?.addEventListener('click', (event) => {
+		if (event.target === lightbox) closeLightbox();
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && lightbox && !lightbox.hidden) {
+			closeLightbox();
+		}
+	});
+</script>
