@@ -1,8 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-// Component Imports
 import CallToAction from '../components/CallToAction.astro';
-// Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
@@ -10,134 +8,137 @@ import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Skills from '../components/Skills.astro';
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+    .slice(0, 4);
 
+/** * Technology list mapped to the keys in your iconPaths.
+ * For icons not yet in your local set (like Maya/Unreal), 
+ * I've kept a 'slug' property as a fallback or future reference.
+ */
 const technologies = [
-	{ name: 'Unreal Engine', slug: 'unrealengine' },
-	{ name: 'Maya', slug: 'autodesk-maya' },
-	{ name: 'Blender', slug: 'blender' },
-	{ name: 'GameMaker Studio 2', slug: 'gamemakerstudio' },
-	{ name: 'Substance Painter', slug: 'substance' },
-	{ name: 'Substance Designer', slug: 'substance' },
-	{ name: 'Photoshop', slug: 'adobephotoshop' },
-	{ name: 'Premiere', slug: 'adobepremierepro' },
-	{ name: 'Python', slug: 'python' },
+    { name: 'Unreal Engine', slug: 'unrealengine' },
+    { name: 'Maya', slug: 'autodeskmaya' },
+    { name: 'Blender', slug: 'blender' },
+    { name: 'GameMaker', slug: 'gamemaker' },
+    { name: 'Substance Painter', icon: 'adobe' }, // Using your new Adobe SVG
+    { name: 'Substance Designer', icon: 'adobe' },
+    { name: 'Photoshop', icon: 'photoshop' },    // Using your new Photoshop SVG
+    { name: 'Premiere', icon: 'premiere' },      // Using your new Premiere SVG
+    { name: 'Python', slug: 'python' },
 ];
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-		<header class="hero">
+    <div class="stack gap-20 lg:gap-48">
+        <div class="wrapper stack gap-8 lg:gap-20">
+            <header class="hero">
+                <Hero
+                    title="Bridging 3D art and code"
+                    tagline="Game prototypes, technical art tools, and 3D models built to feel ready for play."
+                    align="start"
+                >
+                    <div class="roles">
+                        <Pill><Icon icon="castle" size="1.33em" /> Game Developer</Pill>
+                        <Pill><Icon icon="perspective" size="1.33em" /> 3D Generalist</Pill>
+                        <Pill><Icon icon="terminal-window" size="1.33em" /> Technical Artist</Pill>
+                    </div>
+                </Hero>
+            </header>
 
-			<Hero
-				title="Bridging 3D art and code"
-				tagline="Game prototypes, technical art tools, and 3D models built to feel ready for play."
-				align="start"
-			>
-				<div class="roles">
-					<Pill><Icon icon="castle" size="1.33em" /> Game Developer</Pill>
-					<Pill><Icon icon="perspective" size="1.33em" /> 3D Generalist</Pill>
-					<Pill><Icon icon="terminal-window" size="1.33em" /> Technical Artist</Pill>
-				</div>
-			</Hero>
+            <Skills />
+        </div>
 
-			
-		</header>
+        <main class="wrapper stack gap-20 lg:gap-48">
+            <section class="section with-background with-cta">
+                <header class="section-header stack gap-2 lg:gap-4">
+                    <h3>Selected Work</h3>
+                    <p>Explore my featured game development projects, 3D assets, and technical prototypes.</p>
+                </header>
 
-			<Skills />
-		</div>
+                <div class="gallery">
+                    <Grid variant="offset">
+                        {projects.map((project) => (
+                            <li>
+                                <PortfolioPreview project={project} />
+                            </li>
+                        ))}
+                    </Grid>
+                </div>
+                <div class="cta">
+                    <CallToAction href="/work/">
+                        View All
+                        <Icon icon="arrow-right" size="1.2em" />
+                    </CallToAction>
+                </div>
+            </section>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Explore my featured game development projects, 3D assets, and technical prototypes.</p>
-				</header>
+            <section class="section with-background bg-variant">
+                <header class="section-header stack gap-2 lg:gap-4">
+                    <h3>Tools & Technologies</h3>
+                    <p>I bridge the gap between art and code using industry-standard software and scripting languages.</p>
+                </header>
 
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-				<br><br>
-				<div class="cta">
-					<CallToAction href="/work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
+                <div class="gallery">
+                    <Grid variant="small">
+                        {technologies.map((tech) => (
+                            <li class="mention-card">
+                                {tech.icon ? (
+                                    /* Use the local SVG paths you just added */
+                                    <Icon icon={tech.icon} size="2.5rem" />
+                                ) : (
+                                    /* Fallback to CDN for icons not yet in your local object */
+                                    <img
+                                        src={`https://cdn.simpleicons.org/${tech.slug}/ffffff`}
+                                        alt={`${tech.name} logo`}
+                                        loading="lazy"
+                                        class="mention-icon"
+                                    />
+                                )}
+                                <p>{tech.name}</p>
+                            </li>
+                        ))}
+                    </Grid>
+                </div>
+            </section>
+        </main>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Tools & Technologies</h3>
-					<p>
-						I bridge the gap between art and code using industry-standard software and scripting languages.
-					</p>
-				</header>
+        <ContactCTA />
+    </div>
 
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							technologies.map((tech) => (
-								<li class="mention-card">
-									<img
-										src={`https://cdn.simpleicons.org/${tech.slug}?color=ffffff`}
-										alt={`${tech.name} logo`}
-										class="mention-icon"
-									/>
-									<p>{tech.name}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
-		</main>
+    <style>
+        .mention-card {
+            display: grid;
+            place-items: center;
+            gap: 0.8rem;
+            min-height: 9rem;
+            padding: 1.2rem;
+            border-radius: 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background-color var(--theme-transition);
+        }
 
-		<ContactCTA />
-	</div>
+        .mention-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
 
-	<style>
-		.mention-card {
-			display: grid;
-			place-items: center;
-			gap: 0.8rem;
-			min-height: 9rem;
-			padding: 1.2rem;
-			border-radius: 1.5rem;
-			background: rgba(255, 255, 255, 0.04);
-			border: 1px solid rgba(255, 255, 255, 0.08);
-			text-align: center;
-		}
+        /* This class applies to both the fallback <img> 
+           and the wrapper inside the <Icon /> component 
+        */
+        .mention-icon, :global(.mention-card svg) {
+            width: 2.5rem;
+            height: 2.5rem;
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+        }
 
-		.mention-card img,
-		.mention-card svg {
-			width: 2rem;
-			height: 2rem;
-		}
-
-		.mention-card p {
-			margin: 0;
-			font-size: var(--text-sm);
-			line-height: 1.3;
-			font-weight: 600;
-			color: var(--gray-0);
-			max-width: 9rem;
-		}
-	</style>
+        .mention-card p {
+            margin: 0;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--gray-0);
+        }
+    </style>
 </BaseLayout>
-
