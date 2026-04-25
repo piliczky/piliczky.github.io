@@ -2,15 +2,15 @@
 title: SWARMEX
 publishDate: 2026-04-25 00:00:00
 img: /assets/SWARMEX/logo.jpg
-img_alt: Official logo for SWARMEX, a retro-style space shooter.
+img_alt: Official logo for SWARMEX, a retro-style strategy hybrid.
 description: |
   SWARMEX
-  A fast-paced, retro-inspired arcade shooter developed in GameMaker Studio 2. This project served as an exploration of procedural enemy swarming and tight arcade-style movement mechanics.
+  A unique hybrid of Tower Defense, RTS, and Incremental gameplay. Developed in GameMaker, this project focuses on high-level strategy, automation, and large-scale swarm management without the friction of micromanagement.
 tags:
   - GameMaker Studio 2
-  - Steam Published
-  - GML
-  - Retro Arcade
+  - Strategy / RTS
+  - Automation
+  - Tower Defense
 ---
 
 <div class="cta-group" style="display: flex; justify-content: center; gap: 1rem; margin-top: -1rem; margin-bottom: 2rem; flex-wrap: wrap;">
@@ -28,9 +28,9 @@ tags:
 
 ### Project Overview
 
-**SWARMEX** is a high-energy space shooter that pays homage to the classic arcade era while utilizing modern development techniques in **GameMaker Studio 2**. Now published on Steam and Itch.io, the project represents a complete development cycle from initial concept to commercial release.
+**SWARMEX** is a strategic space-defense hybrid that challenges the traditional click-heavy RTS model. Published on Steam and Itch.io, the game focuses on macro-management and automation, allowing players to build massive defensive networks and automated swarms to combat escalating threats.
 
-The core of the project focused on creating "the swarm"—an efficient enemy AI system that allows for dozens of projectiles and ships on screen simultaneously without performance dips, maintaining a smooth 60FPS experience.
+The project was an exploration in balancing deep, incremental systems with a hands-off design philosophy: ensuring that the complexity comes from your build order and infrastructure rather than your reaction speed.
 
 ### Official Trailer
 
@@ -49,20 +49,20 @@ The core of the project focused on creating "the swarm"—an efficient enemy AI 
 
 ### Art & Asset Breakdown
 
-For SWARMEX, I wanted to capture a distinct 8-bit aesthetic while using modern effects. Below is a breakdown of the various sprites and UI elements I designed for the project.
+While the systems are complex, the aesthetic is rooted in authentic 8-bit styling. I designed the visual language to clearly communicate unit roles and resource flows at a glance, which is critical for a game focused on automation.
 
 <div class="stack gap-4">
     <img 
         src="/assets/SWARMEX/Art.png" 
-        alt="Artistic breakdown of SWARMEX sprites and UI" 
+        alt="Artistic breakdown of SWARMEX units and UI" 
         style="border-radius: 1.5rem; box-shadow: var(--shadow-md);"
     />
     <p style="text-align: center; font-style: italic; color: var(--gray-400);">
-        Asset breakdown: Ships, projectiles, and UI components.
+        Asset breakdown: Automated ships, defensive towers, and resource UI.
     </p>
 </div>
 
-The "Vertical Capsule" art below showcases the assets developed specifically for the game's store presence:
+The Vertical Capsule art below showcases the assets developed specifically for the game's store presence:
 
 <div class="stack gap-4" style="align-items: center;">
     <img 
@@ -74,10 +74,11 @@ The "Vertical Capsule" art below showcases the assets developed specifically for
 
 ### Technical Implementation
 
-Leveraging my 15-year background in IT, I focused on several key GML systems to ensure high technical performance:
-* **Dynamic Swarm AI:** Using vector-based movement to allow enemies to flock and surround the player.
-* **Object Pooling:** Efficiently managing laser and explosion objects to ensure the game remains lightweight.
-* **Custom Particle Systems:** Building retro-style "screen-shake" and debris effects to add "juice" to the combat.
-* **Controller Support:** Implementing a seamless input system that switches between keyboard and gamepad on the fly.
+I built SWARMEX with a focus on robust backend logic and efficient data management:
 
-SWARMEX was an exercise in balancing speed and functionality, proving that even with a minimalist aesthetic, the underlying technical systems must be robust to provide a satisfying player experience.
+* **Zero-Micro AI:** Developed custom autonomous behaviors for friendly swarms, ensuring they react intelligently to threats without player input.
+* **Incremental Scalability:** Engineered a math-heavy upgrade system that handles exponential power growth while maintaining game balance.
+* **Efficient Swarm Rendering:** Optimized GameMaker’s drawing pipeline to handle hundreds of active entities, ensuring smooth performance as the player’s automation grows.
+* **Systems Architecture:** Built a modular building system that allows for easy expansion of new tower types and resource loops.
+
+SWARMEX demonstrates my ability to design complex, interlinked systems and translate high-level technical requirements into a cohesive, commercially released product.

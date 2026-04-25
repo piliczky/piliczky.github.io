@@ -26,8 +26,16 @@ Unlike typical game assets, there was no triangle limit for this task. This allo
 ### Presentation Experiment
 
 After completing the model and textures, I produced a short 30-second cinematic sequence to showcase the guitar from various angles, reminiscent of a high-end product advertisement. This video wasn’t part of the core assessment; it was a personal experiment to practice advertising-style rendering and dynamic presentation techniques.
-<!-- 
-<video controls preload="metadata" playsinline style="width:100%;max-width:960px;border-radius:1.5rem;box-shadow:0 24px 50px rgba(0,0,0,.3);margin-top:1.5rem;margin-bottom:1.5rem;">
-  <source src="/assets/Gibson_Guitar/Guitar_Cinematic_Product_Showcase.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video> -->
+
+<div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+    <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/dw51N3vUSzs" 
+        title="3D Model Gibson Guitar Render" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen 
+        style="border-radius: 1.5rem; box-shadow: var(--shadow-lg);">
+    </iframe>
+</div>
