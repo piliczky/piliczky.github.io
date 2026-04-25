@@ -33,6 +33,9 @@ Players find themselves in the "Space Between Hours," forced into a cruel game o
     <source src="/assets/Fortune_Taker/thefortunetakeroverviewreelc.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+<p style="text-align: center; font-style: italic; color: var(--gray-400); margin-top: -2rem; margin-bottom: 2rem;">
+    Artwork by Arien Van Stralen
+</p>
 
 ### Technical Implementation
 
