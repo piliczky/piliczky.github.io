@@ -13,6 +13,10 @@ tags:
   - Rapid Prototyping
 ---
 
+<p style="text-align: center; font-style: italic; color: var(--gray-400); margin-top: -1.5rem; margin-bottom: 2rem;">
+    Drawn by Arien Van Stralen
+</p>
+
 <div class="cta" style="display: flex; justify-content: center; margin-top: -1rem; margin-bottom: 2rem;">
     <a href="https://millie-doherty.itch.io/the-fortune-taker" target="_blank" style="text-decoration: none;">
         <button style="background: #4040e0; color: white; border: none; padding: 0.6rem 2rem; border-radius: 999px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
@@ -23,7 +27,7 @@ tags:
 
 ### Project Overview
 
-**The Fortune Taker** is a psychological horror card game developed under a strict two-week deadline for the Flinders GRL – Spooky Game Jam 2025. I designed the initial concept and served as the Lead Programmer, focusing on rapid prototyping and the creation of the game's core interactive systems.
+**The Fortune Taker** is a psychological horror card game developed under a strict two-week deadline for the Flinders GRL: Spooky Game Jam 2025. I designed the initial concept and served as the Lead Programmer, focusing on rapid prototyping and the creation of the game's core interactive systems.
 
 Players find themselves in the "Space Between Hours," forced into a cruel game of tarot and bone-casting by the Foremother. Survival depends on tactical planning and the ability to turn a twisted game of fate back on its creator.
 
@@ -70,6 +74,7 @@ Managing scope was critical for a two-week jam. I worked closely with a multidis
 * **Gavin Piliczky:** Lead Programming, Concept Design, Special Effects.
 * **Dennis Feklistov:** Additional Programming, Sound Design, Music.
 * **Millie Doherty:** Object Modeling, Texturing, UI Design.
+
 * **Arien Van Stralen:** Tarot Card Illustration.
 * **Alex Konstandinou:** Character Modeling.
 * **Edith Morris:** Narrative and Dialogue.
