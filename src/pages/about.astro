@@ -23,13 +23,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <h2 class="section-title">Background</h2>
                 <div class="content">
                     <p>
-                        I’m a Game Developer and 3D Generalist based in Adelaide, Australia. My approach to game art is driven by a unique blend of technical precision and creative exploration. I specialize in building game-ready assets and systems that are not only visually compelling but also technically optimized for modern development pipelines.
+                        I’m a Game Developer and 3D Generalist based in Adelaide, Australia. My approach to game art is driven by a unique blend of technical precision and creative exploration. I specialize in building game-ready assets and systems that are visually compelling and technically optimized for modern development pipelines.
                     </p>
                     <p>
-                        Prior to shifting my focus toward the creative arts, I spent over 15 years working in the IT sector. This extensive background in technical support and infrastructure provided me with a high-level perspective on problem-solving, documentation, and pipeline efficiency—skills that I now apply directly to game development and technical art.
+                        Prior to shifting my focus toward the creative arts, I spent over 15 years working in the IT sector. This extensive background in technical support and infrastructure provided me with a high-level perspective on problem-solving, documentation, and pipeline efficiency. I now apply these specific skills directly to game development and technical art.
                     </p>
                     <p>
-                        I am passionate about the intersection of art and code, frequently bridging the gap between the two using Unreal Engine, Substance Painter, and various scripting languages to ensure a seamless integration of assets into real-time environments.
+                        I am passionate about the intersection of art and code. I frequently bridge the gap between the two using Unreal Engine, Substance Painter, and various scripting languages to ensure a seamless integration of assets into real-time environments.
                     </p>
                 </div>
             </section>
@@ -37,39 +37,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <section>
                 <h2 class="section-title">Education</h2>
                 <div class="content">
-                    <p>
-                        <strong>Bachelor of Creative Arts (Visual Effects and Entertainment Design)</strong><br />
-                        Flinders University in conjunction with CDW Studios (6 weeks remaining)
-                    </p>
-                    <p>
-                        <strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong>
-                    </p>
-                    <p>
-                        <strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong>
-                    </p>
-                    <p>
-                        <strong>Certificate IV in Information Technology (Client Support)</strong>
-                    </p>
-                    <p>
-                        <strong>Golden Key International Honour Society</strong><br />
-                        Member - Top 15% of students academically at Flinders University<br />
-                        <a href="https://golden-key-international-honou.verified.cv/en/verify/91529646150136">Verify Certificate</a>
-                    </p>
+                    <ul class="about-list">
+                        <li>
+                            <strong>Bachelor of Creative Arts (Visual Effects and Entertainment Design)</strong>
+                            <p>Flinders University in conjunction with CDW Studios (Completing 2026)</p>
+                        </li>
+                        <li>
+                            <strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong>
+                        </li>
+                        <li>
+                            <strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong>
+                        </li>
+                        <li>
+                            <strong>Certificate IV in Information Technology (Client Support)</strong>
+                        </li>
+                        <li>
+                            <strong>Golden Key International Honour Society Member</strong>
+                            <p>Recognized in the top 15% of students academically at Flinders University. <a href="https://golden-key-international-honou.verified.cv/en/verify/91529646150136">Verify Certificate</a></p>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
             <section>
                 <h2 class="section-title">Skills</h2>
                 <div class="content">
-                    <p>
-                        <strong>Creative:</strong> 3D Modeling, Texturing, Material Creation, Asset Development, Environment Design.
-                    </p>
-                    <p>
-                        <strong>Technical:</strong> Unreal Engine Blueprints, C#, Python, GML, Pipeline Optimization, IT Systems Support.
-                    </p>
-                    <p>
-                        <strong>Software:</strong> Unreal Engine, Substance Painter, Blender, Photoshop, Maya.
-                    </p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Creative & 3D</h3>
+                            <ul>
+                                <li>3D Modeling & Environment Design</li>
+                                <li>PBR Texturing & Material Creation</li>
+                                <li>Game-Ready Asset Optimization</li>
+                                <li>Cinematic Storytelling & VFX</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Technical & Code</h3>
+                            <ul>
+                                <li>Unreal Engine Blueprints (Advanced)</li>
+                                <li>C#, Python, and GML</li>
+                                <li>Technical Workflow & Pipeline Design</li>
+                                <li>15+ Years IT Systems Support</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Software Stack</h3>
+                            <ul>
+                                <li>Unreal Engine 5 & Unity</li>
+                                <li>Substance Painter</li>
+                                <li>Blender & Maya</li>
+                                <li>Adobe Creative Suite</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -109,6 +130,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         grid-column: 2 / 4;
     }
 
+    /* List Styling */
+    .about-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-list li strong {
+        color: var(--gray-0);
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .about-list li p {
+        margin: 0;
+        font-size: var(--text-md);
+    }
+
+    /* Skills Grid Styling */
+    .skills-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+    }
+
+    .skill-category h3 {
+        font-size: var(--text-md);
+        color: var(--accent-dark); 
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
+
+    .skill-category ul {
+        list-style: disc;
+        padding-left: 1.2rem;
+        color: var(--gray-300);
+    }
+
+    .skill-category li {
+        margin-bottom: 0.5rem;
+    }
+
     .content :global(a) {
         text-decoration: 1px solid underline transparent;
         text-underline-offset: 0.25em;
@@ -133,6 +199,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         section {
             display: contents;
             font-size: var(--text-lg);
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 </style>
