@@ -1,7 +1,21 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Grid from '../components/Grid.astro';
+
+const technologies = [
+    { name: 'Unreal Engine', slug: 'unrealengine' },
+    { name: 'Maya', slug: 'autodeskmaya' },
+    { name: 'Blender', slug: 'blender' },
+    { name: 'GameMaker', slug: 'gamemaker' },
+    { name: 'Substance Painter', icon: 'adobe' },
+    { name: 'Substance Designer', icon: 'adobe' },
+    { name: 'Photoshop', icon: 'photoshop' },
+    { name: 'Premiere', icon: 'premiere' },
+    { name: 'Python', slug: 'python' },
+];
 ---
 
 <BaseLayout title="About | Gavin Piliczky" description="Learn more about Gavin Piliczky, a Game Developer and 3D Generalist based in Adelaide.">
@@ -17,10 +31,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </a>
                 </div>
                 <img
-                    width="35%"
-                    height="35%"
                     src="/assets/at-work.jpg"
                     alt="Gavin Piliczky working on 3D assets"
+                    class="about-portrait"
                 />
             </Hero>
 
@@ -65,36 +78,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </section>
 
             <section>
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title">Tools & Tech</h2>
                 <div class="content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Creative & 3D</h3>
-                            <ul>
-                                <li>3D Modeling & Environment Design</li>
-                                <li>PBR Texturing & Material Creation</li>
-                                <li>Game-Ready Asset Optimization</li>
-                                <li>Cinematic Storytelling & VFX</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Technical & Code</h3>
-                            <ul>
-                                <li>Unreal Engine Blueprints (Advanced)</li>
-                                <li>Python, and GameMaker Language</li>
-                                <li>Technical Workflow & Pipeline Design</li>
-                                <li>15+ Years IT Systems Support</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Software Stack</h3>
-                            <ul>
-                                <li>Unreal Engine 5</li>
-                                <li>Substance Painter</li>
-                                <li>Maya & Blender</li>
-                                <li>Adobe Creative Suite</li>
-                            </ul>
-                        </div>
+                    <div class="gallery">
+                        <Grid variant="small">
+                            {technologies.map((tech) => (
+                                <li class="mention-card">
+                                    {tech.icon ? (
+                                        <Icon icon={tech.icon} size="2.5rem" />
+                                    ) : (
+                                        <img
+                                            src={`https://cdn.simpleicons.org/${tech.slug}/ffffff`}
+                                            alt={`${tech.name} logo`}
+                                            loading="lazy"
+                                            class="mention-icon"
+                                        />
+                                    )}
+                                    <p>{tech.name}</p>
+                                </li>
+                            ))}
+                        </Grid>
                     </div>
                 </div>
             </section>
@@ -120,7 +123,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .resume-link {
         display: inline-block;
         padding: 0.5rem 1.5rem;
-        /* Using the fuchsia/accent-dark variable from your skills headers */
         color: var(--accent-dark);
         border: 1px solid var(--accent-dark);
         border-radius: 999rem;
@@ -135,8 +137,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         color: var(--gray-999);
     }
 
-    img {
+    .about-portrait {
         display: block;
+        width: 40%;
         margin: 1.5rem auto 0;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
@@ -159,7 +162,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         grid-column: 2 / 4;
     }
 
-    /* List Styling */
     .about-list {
         list-style: none;
         padding: 0;
@@ -179,40 +181,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         font-size: var(--text-md);
     }
 
-    /* Skills Grid Styling */
-    .skills-grid {
+    .mention-card {
         display: grid;
-        gap: 2rem;
-        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 0.8rem;
+        min-height: 9rem;
+        padding: 1.2rem;
+        border-radius: 1.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .skill-category h3 {
-        font-size: var(--text-md);
-        color: var(--accent-dark); 
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
+    .mention-icon, :global(.mention-card svg) {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
-    .skill-category ul {
-        list-style: disc;
-        padding-left: 1.2rem;
-        color: var(--gray-300);
-    }
-
-    .skill-category li {
-        margin-bottom: 0.5rem;
-    }
-
-    .content :global(a) {
-        text-decoration: 1px solid underline transparent;
-        text-underline-offset: 0.25em;
-        transition: text-decoration-color var(--theme-transition);
-    }
-
-    .content :global(a:hover),
-    .content :global(a:focus) {
-        text-decoration-color: currentColor;
+    .mention-card p {
+        margin: 0;
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--gray-0);
     }
 
     @media (min-width: 50em) {
@@ -230,8 +219,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             font-size: var(--text-lg);
         }
 
-        .skills-grid {
-            grid-template-columns: repeat(3, 1fr);
+        .about-portrait {
+            width: 33%;
         }
     }
 </style>

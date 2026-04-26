@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import ContactCTA from '../components/ContactCTA.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -31,7 +33,47 @@ const projects = (await getCollection('work')).sort(
                     ) )
                 }
             </Grid>
+
+            {/* Link to the About page to keep the user journey going */}
+            <aside class="about-cta">
+                <p>Want to learn more about my technical background and 15-year IT journey?</p>
+                <CallToAction href="/about/">
+                    About My Process
+                    <Icon icon="arrow-right" size="1.2em" />
+                </CallToAction>
+            </aside>
         </main>
         <ContactCTA />
     </div>
 </BaseLayout>
+
+<style>
+    .about-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        border-top: 1px solid var(--gray-800);
+        padding-top: 5rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .about-cta p {
+        font-size: var(--text-lg);
+        max-width: 25ch;
+        color: var(--gray-300);
+    }
+
+    @media (min-width: 50em) {
+        .about-cta {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .about-cta p {
+            max-width: 40ch;
+        }
+    }
+</style>
