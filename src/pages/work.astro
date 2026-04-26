@@ -7,31 +7,31 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
 <BaseLayout
-	title="My Work | Gavin Piliczky"
-	description="Learn about Gavin Piliczky's most recent projects"
+    title="Game Dev & 3D Art | Gavin Piliczky"
+    description="Explore game projects and 3D modeling work by Gavin Piliczky."
 >
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
-			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
-				align="start"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-		<ContactCTA />
-	</div>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Games & 3D Projects"
+                tagline="Explore my latest game development projects and 3D assets."
+                align="start"
+            />
+            <Grid variant="offset">
+                {
+                    projects.map((project) => (
+                        <li>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ) )
+                }
+            </Grid>
+        </main>
+        <ContactCTA />
+    </div>
 </BaseLayout>
