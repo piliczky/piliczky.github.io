@@ -41,19 +41,12 @@ const technologies = [
             <section>
                 <h2 class="section-title">Background</h2>
                 <div class="content">
-                    <p>
-                        I am a Game Developer and 3D Artist based in Adelaide, Australia. My journey into game development began with a childhood passion for creating digital worlds. This goal eventually led me to the IT sector to build a deep technical foundation. Today, I combine that lifelong creative drive with a decade and a half of technical expertise to build immersive, optimized game experiences.
-                    </p>
-                    <p>
-                        My work focuses on the intersection of art and code. I specialize in building game-ready assets and systems that balance high-fidelity visuals with the technical rigor required for modern pipelines. Whether I am modeling in Blender and Maya, texturing in Substance Painter, or scripting in Unreal Engine, my goal is always to ensure a seamless integration between the asset and the environment.
-                    </p>
-                    <p>
-                        Having spent 15 years in IT support and infrastructure, I bring a unique perspective to development. I approach every project with a high-level focus on pipeline efficiency, documentation, and structured problem-solving. I am currently completing my Bachelor of Creative Arts at Flinders University and CDW Studios, where I continue to refine my skills in visual effects and entertainment design.
-                    </p>
+                    <p>I am a Game Developer and 3D Artist based in Adelaide, Australia. My journey into game development began with a childhood passion for creating digital worlds. This goal eventually led me to the IT sector to build a deep technical foundation. Today, I combine that lifelong creative drive with a decade and a half of technical expertise to build immersive, optimized game experiences.</p>
+                    <p>My work focuses on the intersection of art and code. I specialize in building game-ready assets and systems that balance high-fidelity visuals with the technical rigor required for modern pipelines. Whether I am modeling in Blender and Maya, texturing in Substance Painter, or scripting in Unreal Engine, my goal is always to ensure a seamless integration between the asset and the environment.</p>
+                    <p>Having spent 15 years in IT support and infrastructure, I bring a unique perspective to development. I approach every project with a high-level focus on pipeline efficiency, documentation, and structured problem-solving. I am currently completing my Bachelor of Creative Arts at Flinders University and CDW Studios, where I continue to refine my skills in visual effects and entertainment design.</p>
                 </div>
             </section>
 
-            {/* Injected Skills Section for deep-dive technical context */}
             <section>
                 <h2 class="section-title">Expertise</h2>
                 <div class="content">
@@ -69,15 +62,9 @@ const technologies = [
                             <strong>Bachelor of Creative Arts (Visual Effects and Entertainment Design)</strong>
                             <p>Flinders University in conjunction with CDW Studios (Completing 2026)</p>
                         </li>
-                        <li>
-                            <strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong>
-                        </li>
-                        <li>
-                            <strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong>
-                        </li>
-                        <li>
-                            <strong>Certificate IV in Information Technology (Client Support)</strong>
-                        </li>
+                        <li><strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong></li>
+                        <li><strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong></li>
+                        <li><strong>Certificate IV in Information Technology (Client Support)</strong></li>
                         <li>
                             <strong>Golden Key International Honour Society Member</strong>
                             <p>Recognized in the top 15% of students academically at Flinders University. <a href="https://golden-key-international-honou.verified.cv/en/verify/91529646150136">Verify Certificate</a></p>
@@ -89,10 +76,10 @@ const technologies = [
             <section>
                 <h2 class="section-title">Tools & Tech</h2>
                 <div class="content">
-                    <div class="gallery">
-                        <Grid variant="small">
-                            {technologies.map((tech) => (
-                                <li class="mention-card">
+                    <Grid variant="small">
+                        {technologies.map((tech) => (
+                            <li class="mention-card">
+                                <div class="icon-container">
                                     {tech.icon ? (
                                         <Icon icon={tech.icon} size="2.5rem" />
                                     ) : (
@@ -100,14 +87,13 @@ const technologies = [
                                             src={`https://cdn.simpleicons.org/${tech.slug}/ffffff`}
                                             alt={`${tech.name} logo`}
                                             loading="lazy"
-                                            class="mention-icon"
                                         />
                                     )}
-                                    <p>{tech.name}</p>
-                                </li>
-                            ))}
-                        </Grid>
-                    </div>
+                                </div>
+                                <p>{tech.name}</p>
+                            </li>
+                        ))}
+                    </Grid>
                 </div>
             </section>
         </main>
@@ -117,9 +103,134 @@ const technologies = [
 </BaseLayout>
 
 <style>
-    /* ... existing styles remain the same ... */
-    
-    /* Ensure the Skills component fits the About page layout */
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
+
+    .hero-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .resume-link {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        color: var(--accent-dark);
+        border: 1px solid var(--accent-dark);
+        border-radius: 999rem;
+        text-decoration: none;
+        font-size: var(--text-md);
+        font-weight: 600;
+        transition: background-color var(--theme-transition), color var(--theme-transition);
+    }
+
+    .resume-link:hover {
+        background-color: var(--accent-dark);
+        color: var(--gray-999);
+    }
+
+    /* Fixed Portrait Styling */
+    .about-portrait {
+        display: block;
+        width: 100%;
+        max-width: 300px; /* Limits the "huge" image */
+        margin: 2rem auto 0;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+        object-fit: cover;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
+
+    .section-title {
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
+
+    .about-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-list li strong {
+        color: var(--gray-0);
+        display: block;
+    }
+
+    /* Standardized Icon Cards */
+    .mention-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+    }
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .icon-container img, 
+    .icon-container :global(svg) {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .mention-card p {
+        margin: 0;
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--gray-0);
+    }
+
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
+
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
+
+        section {
+            display: contents;
+        }
+
+        .section-title {
+            grid-column-start: 1;
+        }
+
+        .content {
+            grid-column: 2 / 3;
+        }
+
+        .about-portrait {
+            max-width: 400px;
+        }
+    }
+
     :global(.skills) {
         border: none !important;
         padding: 0 !important;
