@@ -11,6 +11,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 title="About"
                 tagline="Thanks for stopping by. Read below to learn more about my journey into game development."
             >
+                <div class="hero-actions">
+                    <a href="/assets/Resume/Piliczky_Gavin_Resume.pdf" class="resume-link" download>
+                        Download Resume (PDF)
+                    </a>
+                </div>
                 <img
                     width="35%"
                     height="35%"
@@ -76,7 +81,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <h3>Technical & Code</h3>
                             <ul>
                                 <li>Unreal Engine Blueprints (Advanced)</li>
-                                <li>C#, Python, and GML</li>
+                                <li>Python, and GameMaker Language</li>
                                 <li>Technical Workflow & Pipeline Design</li>
                                 <li>15+ Years IT Systems Support</li>
                             </ul>
@@ -84,9 +89,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="skill-category">
                             <h3>Software Stack</h3>
                             <ul>
-                                <li>Unreal Engine 5 & Unity</li>
+                                <li>Unreal Engine 5</li>
                                 <li>Substance Painter</li>
-                                <li>Blender & Maya</li>
+                                <li>Maya & Blender</li>
                                 <li>Adobe Creative Suite</li>
                             </ul>
                         </div>
@@ -104,6 +109,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         display: flex;
         flex-direction: column;
         gap: 3.5rem;
+    }
+
+    .hero-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .resume-link {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        /* Using the fuchsia/accent-dark variable from your skills headers */
+        color: var(--accent-dark);
+        border: 1px solid var(--accent-dark);
+        border-radius: 999rem;
+        text-decoration: none;
+        font-size: var(--text-md);
+        font-weight: 600;
+        transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition);
+    }
+
+    .resume-link:hover {
+        background-color: var(--accent-dark);
+        color: var(--gray-999);
     }
 
     img {

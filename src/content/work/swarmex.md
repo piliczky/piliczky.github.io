@@ -15,12 +15,12 @@ tags:
 
 <div class="cta-group" style="display: flex; justify-content: center; gap: 1rem; margin-top: -1rem; margin-bottom: 2rem; flex-wrap: wrap;">
     <a href="https://store.steampowered.com/app/4313330/Swarmex/" target="_blank" style="text-decoration: none;">
-        <button style="background: #1b2838; color: #66c0f4; border: 1px solid #66c0f4; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 8px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <button style="background: #a333c8; color: white; border: 1px solid #a333c8; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 8px; transition: background 0.2s ease, transform 0.2s ease;" onmouseover="this.style.background='#c04ad9'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#a333c8'; this.style.transform='scale(1)'">
             VIEW ON STEAM
         </button>
     </a>
     <a href="https://tangy-orange-games.itch.io/swarmex" target="_blank" style="text-decoration: none;">
-        <button style="background: #4040e0; color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <button style="background: #a333c8; color: white; border: 1px solid #a333c8; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s ease, transform 0.2s ease;" onmouseover="this.style.background='#c04ad9'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#a333c8'; this.style.transform='scale(1)'">
             PLAY ON ITCH.IO
         </button>
     </a>

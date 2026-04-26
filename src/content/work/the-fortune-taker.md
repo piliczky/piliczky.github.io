@@ -19,7 +19,7 @@ tags:
 
 <div class="cta" style="display: flex; justify-content: center; margin-top: -1rem; margin-bottom: 2rem;">
     <a href="https://millie-doherty.itch.io/the-fortune-taker" target="_blank" style="text-decoration: none;">
-        <button style="background: #4040e0; color: white; border: none; padding: 0.6rem 2rem; border-radius: 999px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <button style="background: #a333c8; color: white; border: none; padding: 0.6rem 2rem; border-radius: 999px; cursor: pointer; font-weight: bold; transition: background 0.2s ease, transform 0.2s ease;" onmouseover="this.style.background='#c04ad9'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#a333c8'; this.style.transform='scale(1)'">
             Play on Itch.io
         </button>
     </a>

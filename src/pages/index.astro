@@ -14,38 +14,44 @@ const projects = (await getCollection('work'))
     .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
     .slice(0, 4);
 
-/** * Technology list mapped to the keys in your iconPaths.
- * For icons not yet in your local set (like Maya/Unreal), 
- * I've kept a 'slug' property as a fallback or future reference.
- */
 const technologies = [
     { name: 'Unreal Engine', slug: 'unrealengine' },
     { name: 'Maya', slug: 'autodeskmaya' },
     { name: 'Blender', slug: 'blender' },
     { name: 'GameMaker', slug: 'gamemaker' },
-    { name: 'Substance Painter', icon: 'adobe' }, // Using your new Adobe SVG
+    { name: 'Substance Painter', icon: 'adobe' },
     { name: 'Substance Designer', icon: 'adobe' },
-    { name: 'Photoshop', icon: 'photoshop' },    // Using your new Photoshop SVG
-    { name: 'Premiere', icon: 'premiere' },      // Using your new Premiere SVG
+    { name: 'Photoshop', icon: 'photoshop' },
+    { name: 'Premiere', icon: 'premiere' },
     { name: 'Python', slug: 'python' },
 ];
 ---
 
 <BaseLayout>
     <div class="stack gap-20 lg:gap-48">
-        <div class="wrapper stack gap-8 lg:gap-20">
-            <header class="hero">
-                <Hero
-                    title="Bridging 3D art and code"
-                    tagline="Game prototypes, technical art tools, and 3D models built to feel ready for play."
-                    align="start"
-                >
-                    <div class="roles">
-                        <Pill><Icon icon="castle" size="1.33em" /> Game Developer</Pill>
-                        <Pill><Icon icon="perspective" size="1.33em" /> 3D Generalist</Pill>
-                        <Pill><Icon icon="terminal-window" size="1.33em" /> Technical Artist</Pill>
-                    </div>
-                </Hero>
+        <div class="wrapper">
+            <header class="home-hero-grid">
+                <div class="hero-text-section">
+                    <Hero
+                        title="Bridging 3D art and code"
+                        tagline="Game prototypes, technical art tools, and 3D models built to feel ready for play."
+                        align="start"
+                    >
+                        <div class="roles">
+                            <Pill><Icon icon="castle" size="1.33em" /> Game Developer</Pill>
+                            <Pill><Icon icon="perspective" size="1.33em" /> 3D Generalist</Pill>
+                            <Pill><Icon icon="terminal-window" size="1.33em" /> Technical Artist</Pill>
+                        </div>
+                    </Hero>
+                </div>
+
+                <div class="hero-image-section">
+                    <img
+                        alt="Gavin Piliczky"
+                        src="/assets/at-work.jpg"
+                        class="portrait-img"
+                    />
+                </div>
             </header>
 
             <Skills />
@@ -80,16 +86,14 @@ const technologies = [
                     <h3>Tools & Technologies</h3>
                     <p>I bridge the gap between art and code using industry-standard software and scripting languages.</p>
                 </header>
-
+                <br>
                 <div class="gallery">
                     <Grid variant="small">
                         {technologies.map((tech) => (
                             <li class="mention-card">
                                 {tech.icon ? (
-                                    /* Use the local SVG paths you just added */
                                     <Icon icon={tech.icon} size="2.5rem" />
                                 ) : (
-                                    /* Fallback to CDN for icons not yet in your local object */
                                     <img
                                         src={`https://cdn.simpleicons.org/${tech.slug}/ffffff`}
                                         alt={`${tech.name} logo`}
@@ -109,6 +113,60 @@ const technologies = [
     </div>
 
     <style>
+        .home-hero-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portrait-img {
+            width: 100%;
+            max-width: 280px; /* Limits size on mobile */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Desktop Layout Override */
+        @media (min-width: 50em) {
+            .home-hero-grid {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start; /* Aligns text and image top */
+                gap: 4rem;
+                padding-top: 2rem;
+            }
+
+            .hero-text-section {
+                flex: 2; /* 2/3rds of the space */
+                text-align: left;
+            }
+
+            .hero-image-section {
+                flex: 1; /* 1/3rd of the space */
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .portrait-img {
+                width: 100%;
+                max-width: 320px; /* Keep it tight and professional */
+                aspect-ratio: 3 / 4;
+                border-radius: 3rem;
+            }
+        }
+
+        /* Skills/Mention Card Styles */
         .mention-card {
             display: grid;
             place-items: center;
@@ -118,20 +176,11 @@ const technologies = [
             border-radius: 1.5rem;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: background-color var(--theme-transition);
         }
 
-        .mention-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* This class applies to both the fallback <img> 
-           and the wrapper inside the <Icon /> component 
-        */
         .mention-icon, :global(.mention-card svg) {
             width: 2.5rem;
             height: 2.5rem;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
         }
 
         .mention-card p {
