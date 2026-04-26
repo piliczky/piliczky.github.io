@@ -9,6 +9,7 @@ import Skills from '../components/Skills.astro';
 const technologies = [
     { name: 'Unreal Engine', slug: 'unrealengine' },
     { name: 'Maya', slug: 'autodeskmaya' },
+    { name: 'ZBrush', icon: 'zbrush' }, 
     { name: 'Blender', slug: 'blender' },
     { name: 'GameMaker', slug: 'gamemaker' },
     { name: 'Substance Painter', icon: 'adobe' },
@@ -73,9 +74,9 @@ const technologies = [
                 </div>
             </section>
 
-            <section>
+            <section class="tools-section">
                 <h2 class="section-title">Tools & Tech</h2>
-                <div class="content">
+                <div class="content full-width">
                     <Grid variant="small">
                         {technologies.map((tech) => (
                             <li class="mention-card">
@@ -132,11 +133,10 @@ const technologies = [
         color: var(--gray-999);
     }
 
-    /* Fixed Portrait Styling */
     .about-portrait {
         display: block;
         width: 100%;
-        max-width: 300px; /* Limits the "huge" image */
+        max-width: 300px;
         margin: 2rem auto 0;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
@@ -168,7 +168,6 @@ const technologies = [
         display: block;
     }
 
-    /* Standardized Icon Cards */
     .mention-card {
         display: flex;
         flex-direction: column;
@@ -180,6 +179,7 @@ const technologies = [
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.08);
         text-align: center;
+        min-height: 120px;
     }
 
     .icon-container {
@@ -202,12 +202,22 @@ const technologies = [
         font-size: var(--text-sm);
         font-weight: 600;
         color: var(--gray-0);
+        white-space: nowrap;
+    }
+
+    /* Grid Overrides for Tools */
+    .full-width :global(.grid.small) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
     }
 
     @media (min-width: 50em) {
         .about {
             display: grid;
-            grid-template-columns: 1fr 60% 1fr;
+            grid-template-columns: 1fr 70% 1fr;
         }
 
         .about > :global(:first-child) {
@@ -218,12 +228,28 @@ const technologies = [
             display: contents;
         }
 
+        /* Specifically force the Tools section to stack header on top */
+        .tools-section {
+            display: block !important;
+            grid-column: 2;
+            margin-top: 2rem;
+        }
+
+        .tools-section .section-title {
+            margin-bottom: 2rem;
+        }
+
         .section-title {
             grid-column-start: 1;
         }
 
         .content {
             grid-column: 2 / 3;
+        }
+
+        .full-width :global(.grid.small) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .about-portrait {
