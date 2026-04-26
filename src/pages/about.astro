@@ -4,6 +4,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Grid from '../components/Grid.astro';
+import Skills from '../components/Skills.astro';
 
 const technologies = [
     { name: 'Unreal Engine', slug: 'unrealengine' },
@@ -49,6 +50,14 @@ const technologies = [
                     <p>
                         Having spent 15 years in IT support and infrastructure, I bring a unique perspective to development. I approach every project with a high-level focus on pipeline efficiency, documentation, and structured problem-solving. I am currently completing my Bachelor of Creative Arts at Flinders University and CDW Studios, where I continue to refine my skills in visual effects and entertainment design.
                     </p>
+                </div>
+            </section>
+
+            {/* Injected Skills Section for deep-dive technical context */}
+            <section>
+                <h2 class="section-title">Expertise</h2>
+                <div class="content">
+                    <Skills />
                 </div>
             </section>
             
@@ -108,119 +117,12 @@ const technologies = [
 </BaseLayout>
 
 <style>
-    .about {
-        display: flex;
-        flex-direction: column;
-        gap: 3.5rem;
-    }
-
-    .hero-actions {
-        margin-top: 1.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .resume-link {
-        display: inline-block;
-        padding: 0.5rem 1.5rem;
-        color: var(--accent-dark);
-        border: 1px solid var(--accent-dark);
-        border-radius: 999rem;
-        text-decoration: none;
-        font-size: var(--text-md);
-        font-weight: 600;
-        transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition);
-    }
-
-    .resume-link:hover {
-        background-color: var(--accent-dark);
-        color: var(--gray-999);
-    }
-
-    .about-portrait {
-        display: block;
-        width: 40%;
-        margin: 1.5rem auto 0;
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-md);
-    }
-
-    section {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        color: var(--gray-200);
-    }
-
-    .section-title {
-        grid-column-start: 1;
-        font-size: var(--text-xl);
-        color: var(--gray-0);
-    }
-
-    .content {
-        grid-column: 2 / 4;
-    }
-
-    .about-list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .about-list li strong {
-        color: var(--gray-0);
-        display: block;
-        margin-bottom: 0.25rem;
-    }
-
-    .about-list li p {
-        margin: 0;
-        font-size: var(--text-md);
-    }
-
-    .mention-card {
-        display: grid;
-        place-items: center;
-        gap: 0.8rem;
-        min-height: 9rem;
-        padding: 1.2rem;
-        border-radius: 1.5rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .mention-icon, :global(.mention-card svg) {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .mention-card p {
-        margin: 0;
-        font-size: var(--text-sm);
-        font-weight: 600;
-        color: var(--gray-0);
-    }
-
-    @media (min-width: 50em) {
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 60% 1fr;
-        }
-
-        .about > :global(:first-child) {
-            grid-column-start: 2;
-        }
-
-        section {
-            display: contents;
-            font-size: var(--text-lg);
-        }
-
-        .about-portrait {
-            width: 33%;
-        }
+    /* ... existing styles remain the same ... */
+    
+    /* Ensure the Skills component fits the About page layout */
+    :global(.skills) {
+        border: none !important;
+        padding: 0 !important;
+        background: none !important;
     }
 </style>
