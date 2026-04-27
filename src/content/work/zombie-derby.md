@@ -10,7 +10,6 @@ tags:
   - Game Design
   - Programming
   - Unreal Engine
-  - C#
 ---
 
 <p style="text-align: center; font-style: italic; color: var(--gray-400); margin-top: -2rem; margin-bottom: 2rem;">

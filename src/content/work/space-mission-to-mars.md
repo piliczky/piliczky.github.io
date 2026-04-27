@@ -8,7 +8,7 @@ description: |
   A short cinematic film created in Unreal Engine 5. This project explores high-end visual effects, Niagara particle systems, and dramatic storytelling through environment design and animation blending.
 tags:
   - Unreal Engine 5
-  - Niagara VFX
+  - VFX
   - Cinematics
   - Storytelling
 ---

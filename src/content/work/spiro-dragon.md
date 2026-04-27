@@ -8,6 +8,7 @@ description: |
   This stylized dragon was sculpted entirely in ZBrush over about two weeks as part of my studies at Flinders University and CDW Studios. I used vertex painting instead of UVs, so only a high-poly version exists.
   It was a fun and rewarding project that helped me improve my sculpting and character design skills. I hope to create a 3D print of it in the future.
 tags:
+  - 3D Modeling
   - Sculpture
   - ZBrush
   - Character Art

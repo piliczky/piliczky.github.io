@@ -11,6 +11,7 @@ tags:
   - Strategy / RTS
   - Automation
   - Tower Defense
+  - Game Development
 ---
 
 <div class="cta-group" style="display: flex; justify-content: center; gap: 1rem; margin-top: -1rem; margin-bottom: 2rem; flex-wrap: wrap;">

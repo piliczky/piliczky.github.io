@@ -9,13 +9,39 @@ import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Filter for 3D work and sort by date (Newest First)
 const projects = (await getCollection('work'))
-    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-    .slice(0, 4);
+    .filter((project) => 
+        project.data.tags.includes('3D Modeling')
+    )
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
-<BaseLayout>
-    <div class="stack gap-10 lg:gap-16">
+<BaseLayout
+    title="3D Art & Design | Gavin Piliczky"
+    description="The professional portfolio of Gavin Piliczky, 3D Generalist and Game Developer."
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            {/* SECTION 1: HERO HEADER (Matching Games Page Sizing) */}
+            <Hero
+                title="3D Art & Assets"
+                tagline="High-fidelity models, environment art, and textured props designed for games and real-time engines."
+                align="start"
+            />
+
+            <div class="gallery">
+                <Grid variant="offset">
+                    {projects.map((project) => (
+                        <li>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ))}
+                </Grid>
+            </div>
+        </main>
+
+        {/* SECTION 2: ABOUT / BIO */}
         <div class="wrapper">
             <header class="home-hero-grid">
                 <div class="hero-text-section">
@@ -42,31 +68,6 @@ const projects = (await getCollection('work'))
             </header>
         </div>
 
-        <main class="wrapper stack gap-20 lg:gap-32">
-            <section class="section with-background with-cta">
-                <header class="section-header stack gap-2 lg:gap-4">
-                    <h3>Selected Work</h3>
-                    <p>Explore my featured game development projects, 3D assets, and technical prototypes.</p>
-                </header>
-
-                <div class="gallery">
-                    <Grid variant="offset">
-                        {projects.map((project) => (
-                            <li>
-                                <PortfolioPreview project={project} />
-                            </li>
-                        ))}
-                    </Grid>
-                </div>
-                <div class="cta">
-                    <CallToAction href="/work/">
-                        View All
-                        <Icon icon="arrow-right" size="1.2em" />
-                    </CallToAction>
-                </div>
-            </section>
-        </main>
-
         <ContactCTA />
     </div>
 
@@ -77,6 +78,8 @@ const projects = (await getCollection('work'))
             align-items: center;
             gap: 2rem;
             margin-bottom: 1rem;
+            border-top: 1px solid var(--gray-800);
+            padding-top: 5rem;
         }
 
         .portrait-img {
@@ -101,7 +104,6 @@ const projects = (await getCollection('work'))
                 justify-content: space-between;
                 align-items: flex-start;
                 gap: 4rem;
-                padding-top: 2rem;
             }
 
             .hero-text-section {

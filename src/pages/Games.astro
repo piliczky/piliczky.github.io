@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Filter for Game Dev projects and sort Newest First
+const projects = (await getCollection('work'))
+    .filter((project) => 
+        project.data.tags.includes('Game Development') || 
+        project.data.tags.includes('Programming')
+    )
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout
+    title="Game Development | Gavin Piliczky"
+    description="Explore game design, blueprints, and technical programming projects by Gavin Piliczky."
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Game Development"
+                tagline="Technical prototypes, game jam entries, and interactive systems built in Unreal Engine Blueprints and Gameaker Language (GML)."
+                align="start"
+            />
+            
+            <Grid variant="offset">
+                {
+                    projects.map((project) => (
+                        <li>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+
+            {/* Link to the About page to keep the user journey going */}
+            <aside class="about-cta">
+                <p>Want to learn more about my technical background and 15-year IT journey?</p>
+                <CallToAction href="/about/">
+                    About My Process
+                    <Icon icon="arrow-right" size="1.2em" />
+                </CallToAction>
+            </aside>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+<style>
+    .about-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        border-top: 1px solid var(--gray-800);
+        padding-top: 5rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .about-cta p {
+        font-size: var(--text-lg);
+        max-width: 25ch;
+        color: var(--gray-300);
+    }
+
+    @media (min-width: 50em) {
+        .about-cta {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .about-cta p {
+            max-width: 40ch;
+        }
+    }
+</style>

@@ -7,7 +7,7 @@ description: |
   Vintage Camera
   This vintage camera was modeled in Maya and textured in Substance Painter. I used original reference images and researched old camera parts online to accurately recreate how the components fit together. The project focused on capturing the mechanical detail and craftsmanship of early camera designs.
 tags:
-  - Modeling
+  - 3D Modeling
   - Texturing
   - Maya
   - Substance Painter

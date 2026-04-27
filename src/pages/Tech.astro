@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Filter for Technical, Rigging, and Film projects
+const projects = (await getCollection('work'))
+    .filter((project) => 
+        project.data.tags.includes('Technical') || 
+        project.data.tags.includes('Rigging') ||
+        project.data.tags.includes('VFX')
+    )
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout
+    title="Technical Portfolio | Gavin Piliczky"
+    description="Technical art, rigging, and Unreal Engine cinematic projects by Gavin Piliczky."
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Technical & Cinematics"
+                tagline="A showcase of technical art, rigging systems, and cinematic storytelling in Unreal Engine."
+                align="start"
+            />
+            
+            <Grid variant="offset">
+                {
+                    projects.map((project) => (
+                        <li>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+
+            <aside class="about-cta">
+                <p>Interested in the code behind the art? Check out my game development work.</p>
+                <CallToAction href="/Games/">
+                    View Games
+                    <Icon icon="arrow-right" size="1.2em" />
+                </CallToAction>
+            </aside>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+<style>
+    .about-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        border-top: 1px solid var(--gray-800);
+        padding-top: 5rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .about-cta p {
+        font-size: var(--text-lg);
+        max-width: 25ch;
+        color: var(--gray-300);
+    }
+
+    @media (min-width: 50em) {
+        .about-cta {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .about-cta p {
+            max-width: 40ch;
+        }
+    }
+</style>

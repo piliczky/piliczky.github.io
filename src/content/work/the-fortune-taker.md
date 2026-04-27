@@ -7,6 +7,7 @@ description: |
   The Fortune Taker
   A high-stakes, single-player tarot and dice game developed for the Flinders GRL Spooky Game Jam 2025. I served as the Lead Programmer and Concept Designer.
 tags:
+  - Game Development
   - Lead Programmer
   - Unreal Engine
   - Blueprints

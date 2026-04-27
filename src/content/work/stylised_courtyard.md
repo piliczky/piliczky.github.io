@@ -7,6 +7,7 @@ description: |
   Stylised Courtyard
   This project features a stylised environment modeled in Maya and textured to capture a whimsical, hand-painted aesthetic. I focused on modular environment design, creating specific assets like columns and candelabras to populate the scene efficiently while maintaining a cohesive art style.
 tags:
+  - 3D Modeling
   - Environment Art
   - Stylised
   - Maya
