@@ -25,7 +25,7 @@ const projects = (await getCollection('work'))
         <main class="wrapper stack gap-8">
             <Hero
                 title="Game Development"
-                tagline="Technical prototypes, game jam entries, and interactive systems built in Unreal Engine Blueprints and Gameaker Language (GML)."
+                tagline="Technical prototypes, game jam entries, and interactive systems built in Unreal Engine Blueprints and GameMaker Language (GML)."
                 align="start"
             />
             
@@ -39,12 +39,15 @@ const projects = (await getCollection('work'))
                 }
             </Grid>
 
-            {/* Link to the About page to keep the user journey going */}
-            <aside class="about-cta">
-                <p>Want to learn more about my technical background and 15-year IT journey?</p>
-                <CallToAction href="/about/">
-                    About My Process
-                    <Icon icon="arrow-right" size="1.2em" />
+            {/* UPDATED CTA: Flows into Technical/VFX work */}
+            <aside class="technical-cta">
+                <div class="cta-text">
+                    <p>Interested in the intersection of film and real-time tech?</p>
+                    <small>Explore cinematics, camera tracking, and VFX compositing.</small>
+                </div>
+                <CallToAction href="/Tech/">
+                    Technical Art & VFX
+                    <Icon icon="terminal-window" size="1.2em" />
                 </CallToAction>
             </aside>
         </main>
@@ -53,7 +56,7 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
-    .about-cta {
+    .technical-cta {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -64,21 +67,29 @@ const projects = (await getCollection('work'))
         text-align: center;
     }
 
-    .about-cta p {
+    .cta-text p {
         font-size: var(--text-lg);
         max-width: 25ch;
-        color: var(--gray-300);
+        color: var(--gray-200);
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-text small {
+        display: block;
+        font-size: var(--text-md);
+        color: var(--gray-400);
     }
 
     @media (min-width: 50em) {
-        .about-cta {
+        .technical-cta {
             flex-direction: row;
             justify-content: space-between;
             text-align: left;
         }
 
-        .about-cta p {
+        .cta-text p {
             max-width: 40ch;
+            font-size: var(--text-xl);
         }
     }
 </style>

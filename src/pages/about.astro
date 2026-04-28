@@ -65,12 +65,21 @@ const technologies = [
                             <strong>Bachelor of Creative Arts (Visual Effects and Entertainment Design)</strong>
                             <p>Flinders University in conjunction with CDW Studios (Completing 2026)</p>
                         </li>
-                        <li><strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong></li>
-                        <li><strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong></li>
-                        <li><strong>Certificate IV in Information Technology (Client Support)</strong></li>
+                        <li>
+                            <strong>Advanced Diploma of Screen and Media (Content Creation and Design)</strong>
+                            <p><a href="/assets/Resume/Piliczky_Gavin_Advanced_Diploma.png" target="_blank">Verify Certificate</a></p>
+                        </li>
+                        <li>
+                            <strong>Diploma of Screen and Media (Animation, Gaming, and VFX)</strong>
+                            <p><a href="/assets/Resume/Piliczky_Gavin_Diploma.png" target="_blank">Verify Certificate</a></p>
+                        </li>
+                        <li>
+                            <strong>Certificate IV in Information Technology (Client Support)</strong>
+                            <p><a href="/assets/Resume/Piliczky_Gavin_Cert_IV_IT.png" target="_blank">Verify Certificate</a></p>
+                        </li>
                         <li>
                             <strong>Golden Key International Honour Society Member</strong>
-                            <p>Recognized in the top 15% of students academically at Flinders University. <a href="https://golden-key-international-honou.verified.cv/en/verify/91529646150136">Verify Certificate</a></p>
+                            <p>Recognized in the top 15% of students academically at Flinders University. <a href="https://golden-key-international-honou.verified.cv/en/verify/91529646150136" target="_blank">Verify Certificate</a></p>
                         </li>
                     </ul>
                 </div>
@@ -170,6 +179,16 @@ const technologies = [
         display: block;
     }
 
+    .about-list li a {
+        color: var(--accent-regular);
+        text-decoration: underline;
+        text-underline-offset: 0.25rem;
+    }
+
+    .about-list li a:hover {
+        color: var(--accent-light);
+    }
+
     .mention-card {
         display: flex;
         flex-direction: column;
@@ -230,7 +249,6 @@ const technologies = [
             display: contents;
         }
 
-        /* Specifically force the Tools section to stack header on top */
         .tools-section {
             display: block !important;
             grid-column: 2;

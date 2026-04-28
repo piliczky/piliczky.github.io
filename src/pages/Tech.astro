@@ -40,10 +40,14 @@ const projects = (await getCollection('work'))
                 }
             </Grid>
 
+            {/* ENHANCED CTA: Narrative focus on IT background & workflow */}
             <aside class="about-cta">
-                <p>Interested in the code behind the art? Check out my game development work.</p>
-                <CallToAction href="/Games/">
-                    View Games
+                <div class="cta-text">
+                    <p>Building high-end visuals requires more than just an artistic eye. It requires a structured technical foundation.</p>
+                    <small>Learn how my 15-year career in IT infrastructure and client support allows me to approach complex 3D pipelines and technical troubleshooting with a unique, professional perspective.</small>
+                </div>
+                <CallToAction href="/about/">
+                    My Story & Process
                     <Icon icon="arrow-right" size="1.2em" />
                 </CallToAction>
             </aside>
@@ -64,10 +68,20 @@ const projects = (await getCollection('work'))
         text-align: center;
     }
 
-    .about-cta p {
+    .cta-text p {
         font-size: var(--text-lg);
-        max-width: 25ch;
-        color: var(--gray-300);
+        max-width: 30ch;
+        color: var(--gray-100);
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .cta-text small {
+        display: block;
+        font-size: var(--text-md);
+        color: var(--gray-400);
+        max-width: 45ch;
+        line-height: 1.5;
     }
 
     @media (min-width: 50em) {
@@ -75,10 +89,16 @@ const projects = (await getCollection('work'))
             flex-direction: row;
             justify-content: space-between;
             text-align: left;
+            align-items: flex-start;
         }
 
-        .about-cta p {
+        .cta-text p {
             max-width: 40ch;
+            font-size: var(--text-xl);
+        }
+
+        .cta-text small {
+            max-width: 50ch;
         }
     }
 </style>
