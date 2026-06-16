@@ -1,6 +1,6 @@
 ---
 
-title: Chunky Stylised Offroad Vehicle
+title: Stylised 4x4 Vehicle
 publishDate: 2025-06-18 00:00:00
 img: /assets/Offroad_Vehicle/offroad-vehicle.png
 img_alt: Stylised offroad vehicle game asset created in Blender and Substance Painter.
