@@ -1,5 +1,5 @@
 ---
-title: Lytham Hall Modular Building Kit
+title: Lytham Hall
 publishDate: 2026-06-09 00:00:00
 img: /assets/Lytham_Hall/Render_1.png
 img_alt: Modular architectural kit inspired by Lytham Hall, created in Blender and assembled in Unreal Engine.

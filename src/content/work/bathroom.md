@@ -1,11 +1,11 @@
 ---
 
-title: Bathroom Scene Recreation
+title: Bathroom
 publishDate: 2026-06-17 00:00:00
 img: /assets/Bathroom/Bathroom_Recreation_Day.png
 img_alt: Bathroom scene recreation created in Unreal Engine as part of a university environment art project.
 description: |
-    Bathroom Scene Recreation
+    Bathroom Recreation
     
 tags:
 
