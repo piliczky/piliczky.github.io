@@ -1,49 +1,48 @@
 ---
-
-title: Lytham Hall Environment
+title: Lytham Hall Modular Building Kit
 publishDate: 2026-06-09 00:00:00
 img: /assets/Lytham_Hall/Render_1.png
-img_alt: Modular recreation of Lytham Hall created in Blender and rendered in Unreal Engine.
-description: 
-  Lytham Hall Environment
-  This project is a modular environment recreation inspired by Lytham Hall in England. The set was built using reusable architectural pieces including walls, windows, pillars, and roof sections to create a flexible environment kit.
-
-  The assets were modelled in Blender, imported into Unreal Engine, and assembled into a final cinematic environment presentation. The final result was rendered as a movie sequence directly from Unreal Engine.
+img_alt: Modular architectural kit inspired by Lytham Hall, created in Blender and assembled in Unreal Engine.
+description: |
+    Lytham Hall Modular Building Kit
+    This project focused on creating a modular architectural kit inspired by Lytham Hall in England.
 tags:
 
 - 3D Modeling
-- Environment Art
 - Modular Workflow
+- Architectural Modeling
 - Blender
 - Unreal Engine
 - ArchViz
 
 ---
 
-This project focused on recreating the architectural style and atmosphere of Lytham Hall in England using a modular environment workflow. The scene was constructed from a reusable set of pieces including walls, windows, pillars, trims, and roof sections that could be assembled into larger structures efficiently.
+This project focused on creating a modular architectural kit based on the design and structure of Lytham Hall in England. Rather than modelling a single building as a unique asset, the goal was to develop a collection of reusable architectural pieces that could be assembled into larger structures using a modular workflow.
 
-The entire kit was modelled in Blender with a strong focus on clean topology, modular alignment, and reusable components suitable for real-time rendering workflows.
+The kit includes walls, windows, pillars, trims, roof sections, and decorative elements designed to align cleanly on a grid and support efficient construction inside a real-time engine.
 
-After modelling and assembly, the assets were imported into Unreal Engine where the final environment was lit, composed, and rendered as a cinematic sequence for presentation purposes. This workflow allowed the project to combine traditional modelling techniques with real-time rendering and sequencing tools inside Unreal Engine.
+The entire kit was modelled in Blender with a strong emphasis on clean topology, modular dimensions, and asset reusability. This approach mirrors common workflows used in game development, where modular assets are used to construct large environments while minimising production time and asset redundancy.
 
-![Primary render of the Lytham Hall environment](/assets/Lytham_Hall/Render_2.png)
+Once complete, the kit was imported into Unreal Engine and assembled into a full recreation of Lytham Hall. The finished structure serves as a demonstration of how the individual pieces can be combined to create a complex architectural scene while maintaining consistency and flexibility throughout the build process.
+
+![Primary render of the Lytham Hall modular building kit](/assets/Lytham_Hall/Render_2.png)
 
 ## Modular Breakdown
 
-The environment was designed as a modular kit using interchangeable architectural elements. This allowed large sections of the structure to be assembled efficiently while maintaining visual consistency throughout the environment.
+The project was designed around a modular workflow using interchangeable architectural components. By creating a flexible kit of reusable assets, large sections of the building could be assembled quickly while maintaining a consistent visual style and architectural scale.
 
-![Breakdown of the modular environment pieces](/assets/Lytham_Hall/BreakDown.png)
+![Breakdown of the modular building kit pieces](/assets/Lytham_Hall/BreakDown.png)
 
-The project helped develop my understanding of modular environment construction, architectural asset creation, scene composition, and cinematic rendering workflows within a real-time engine pipeline.
+This project helped develop my understanding of modular asset creation, architectural modelling, kit design, scene assembly, and real-time rendering workflows within Unreal Engine.
 
 ## Development Progression
 
-This video documents the progression of the environment from the initial Unreal Engine blockout and prototype stages through to texturing, expansion of the modular kit, and final environment completion.
+This video documents the development of the project from the initial Unreal Engine blockout stages through to the creation of the modular asset library, texturing, assembly, and final building reconstruction.
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
-    <video 
-        controls 
-        width="100%" 
+    <video
+        controls
+        width="100%"
         style="border-radius: 1.5rem; box-shadow: var(--shadow-lg);"
     >
         <source src="/assets/Lytham_Hall/Piliczky_Gavin_Progress_Shot_Seq.mp4" type="video/mp4">
@@ -53,12 +52,12 @@ This video documents the progression of the environment from the initial Unreal 
 
 ## Final Cinematic Presentation
 
-This final cinematic sequence showcases the completed environment from multiple angles inside Unreal Engine, highlighting the modular construction, lighting, atmosphere, and architectural detail of the finished scene.
+This final cinematic sequence showcases the completed reconstruction assembled from the modular kit inside Unreal Engine, highlighting the architectural details, modular workflow, lighting, and overall presentation of the finished project.
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
-    <video 
-        controls 
-        width="100%" 
+    <video
+        controls
+        width="100%"
         style="border-radius: 1.5rem; box-shadow: var(--shadow-lg);"
     >
         <source src="/assets/Lytham_Hall/Piliczky_Gavin_Video_Sequence.mp4" type="video/mp4">
