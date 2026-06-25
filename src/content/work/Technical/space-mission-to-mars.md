@@ -1,7 +1,7 @@
 ---
 title: Space Mission to Mars
 publishDate: 2026-04-25 00:00:00
-img: /assets/Mars/Mars_1.png
+img: /assets/Tech/Mars/Mars_1.png
 img_alt: A cinematic shot of an astronaut descending toward the Martian surface.
 description: |
   Space Mission to Mars

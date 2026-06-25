@@ -1,7 +1,7 @@
 ---
 title: Robot VFX Integration
 publishDate: 2024-11-10 00:00:00
-img: /assets/Robot/Robot.png
+img: /assets/Tech/Robot/Robot.png
 img_alt: 3D Robot model integrated into a real-world warehouse environment.
 description: |
   Robot VFX Integration
@@ -40,7 +40,7 @@ The final result is a seamless integration of 3D animation and live-action cinem
         width="100%" 
         style="border-radius: 1.5rem; box-shadow: var(--shadow-lg);"
     >
-        <source src="/assets/Robot/Robot_Comp.mp4" type="video/mp4">
+        <source src="/assets/Tech/Robot/Robot_Comp.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
