@@ -81,10 +81,16 @@ const { Content } = await render(entry);
 
 	.tags {
 		display: flex;
+		flex: 1 1 32rem;
+		flex-wrap: wrap;
 		gap: 0.5rem;
+		min-width: 0;
+		max-width: 100%;
 	}
 
 	.description {
+		flex: 1 1 24rem;
+		min-width: 0;
 		font-size: var(--text-lg);
 		max-width: 54ch;
 	}
@@ -192,7 +198,9 @@ const { Content } = await render(entry);
 
 		.details {
 			flex-direction: row;
+			flex-wrap: wrap;
 			gap: 2.5rem;
+			align-items: flex-start;
 		}
 
 		.content :global(blockquote) {
