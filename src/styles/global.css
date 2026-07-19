@@ -1,20 +1,3 @@
-.roles {
-    display: none;
-}
-
-@media (min-width: 50em) {
-    .roles {
-        display: flex;
-        flex-direction: row; /* Forces horizontal alignment */
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-    
-    .roles :global(.pill) {
-        width: max-content; /* Keeps buttons snug around the text */
-    }
-}
-
 /* Global variables */
 :root {
 	/* Colors */

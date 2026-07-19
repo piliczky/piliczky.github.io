@@ -7,18 +7,18 @@ import Grid from '../components/Grid.astro';
 import Skills from '../components/Skills.astro';
 
 const technologies = [
-    { name: 'Unreal Engine', slug: 'unrealengine' },
-    { name: 'Maya', slug: 'autodeskmaya' },
+    { name: 'Unreal Engine', icon: 'unreal-engine' },
+    { name: 'Maya', icon: 'maya' },
     { name: 'ZBrush', icon: 'zbrush' }, 
-    { name: 'Blender', slug: 'blender' },
-    { name: 'Substance Painter', icon: 'adobe' },
-    { name: 'Substance Designer', icon: 'adobe' },
-    { name: 'GameMaker', slug: 'gamemaker' },
+    { name: 'Blender', icon: 'blender' },
+    { name: 'Substance Painter', mark: 'Pt' },
+    { name: 'Substance Designer', mark: 'Ds' },
+    { name: 'GameMaker', icon: 'gamemaker' },
     { name: 'Photoshop', icon: 'photoshop' },
     { name: 'Premiere', icon: 'premiere' },
     { name: 'After Effects', icon: 'after-effects' },
     { name: 'Illustrator', icon: 'illustrator' },
-    { name: 'Python', slug: 'python' },
+    { name: 'Python', icon: 'python' },
 ];
 ---
 
@@ -100,11 +100,7 @@ const technologies = [
                                     {tech.icon ? (
                                         <Icon icon={tech.icon} size="2.5rem" />
                                     ) : (
-                                        <img
-                                            src={`https://cdn.simpleicons.org/${tech.slug}/ffffff`}
-                                            alt={`${tech.name} logo`}
-                                            loading="lazy"
-                                        />
+                                        <span class="tech-mark" aria-hidden="true">{tech.mark}</span>
                                     )}
                                 </div>
                                 <p>{tech.name}</p>
@@ -214,6 +210,7 @@ const technologies = [
         justify-content: center;
         width: 2.5rem;
         height: 2.5rem;
+        color: var(--accent-dark);
     }
 
     .icon-container img, 
@@ -221,6 +218,20 @@ const technologies = [
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .tech-mark {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        border: 2px solid var(--accent-dark);
+        border-radius: 0.65rem;
+        color: var(--accent-dark);
+        font-family: var(--font-brand);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        line-height: 1;
     }
 
     .mention-card p {

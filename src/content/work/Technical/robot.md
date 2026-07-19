@@ -28,7 +28,7 @@ After the 3D assets were finalized, I handled the animation and final compositin
 * **Lighting Match:** Aligning the CG lighting to the natural light of the warehouse bay.
 * **Shadow Catching:** Integrating the robot into the floor geometry to ground it in the scene.
 
-![Still frame of the robot model showing textures and lighting integration](/assets/Robot/Robot.png)
+![Still frame of the robot model showing textures and lighting integration](/assets/Tech/Robot/Robot.png)
 
 ### Final VFX Shot
 

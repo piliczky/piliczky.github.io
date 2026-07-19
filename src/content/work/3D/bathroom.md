@@ -49,21 +49,6 @@ The final daytime render was created in Unreal Engine and focused on matching th
     </p>
 </div>
 
-### Alternative Night Lighting
-
-An alternative nighttime lighting setup was also created using the same environment and asset set. This version explores a warmer artificial lighting scenario while keeping the layout and props consistent with the original scene.
-
-<div class="stack gap-4">
-    <img 
-        src="/assets/3D/Bathroom/Bathroom_Recreation_Night.png" 
-        alt="Alternative nighttime bathroom recreation rendered in Unreal Engine" 
-        style="border-radius: 1.5rem; box-shadow: var(--shadow-md);"
-    />
-    <p style="text-align: center; font-style: italic; color: var(--gray-400);">
-        Alternative nighttime lighting scenario created in Unreal Engine.
-    </p>
-</div>
-
 ### Asset Breakdown
 
 Several key props were modelled, UV mapped, textured, and presented as individual turntable renders. These assets were created to support the final bathroom environment and help match the original reference scene.
@@ -100,7 +85,7 @@ This decorative wall shelf was recreated from the original reference image and c
 
 ### Light Fixture
 
-The light fixture was modelled and textured to match the decorative lighting visible in the reference image. It helped define the style of the scene and contributed to both the daytime and nighttime lighting presentations.
+The light fixture was modelled and textured to match the decorative lighting visible in the reference image. It helped define the style of the scene and contributed to the final daytime presentation.
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video 
@@ -150,7 +135,6 @@ This project combined environment art, asset creation, material development, and
 * **Reference Matching:** Analysed the original image to recreate the layout, lighting direction, colour palette, and atmosphere as closely as possible.
 * **Custom Props:** Modelled and textured several bathroom assets specifically for this scene, including the vanity, heater, light fixture, jar, and towel rack.
 * **Material Work:** Developed materials for wood, ceramic, metal, glass, tile, and painted surfaces to match the reference image.
-* **Lighting Variations:** Created both a daytime lighting setup and an alternative nighttime version to explore different moods using the same scene.
 * **Real-Time Presentation:** Assembled, lit, and rendered the final environment inside Unreal Engine for portfolio and university presentation purposes.
 
 The project helped strengthen my understanding of environment recreation, real-time lighting, material authoring, prop modelling, and Unreal Engine presentation workflows.

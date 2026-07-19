@@ -9,16 +9,29 @@ import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Filter for 3D work and sort by date (Newest First)
+// Keep the 3D portfolio in a deliberate presentation order.
+const projectOrder = [
+    'vintage-camera',
+    'stylised_courtyard',
+    'spyro-dragon',
+    'gibson-guitar',
+    'offroad-vehicle',
+    'bathroom',
+];
+
 const projects = (await getCollection('work'))
     .filter((project) => 
         project.data.tags.includes('3D Modeling')
     )
-    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+    .sort((a, b) => {
+        const aSlug = a.id.split('/').at(-1) ?? '';
+        const bSlug = b.id.split('/').at(-1) ?? '';
+        return projectOrder.indexOf(aSlug) - projectOrder.indexOf(bSlug);
+    });
 ---
 
 <BaseLayout
-    title=" Gavin Piliczky | 3D Art"
+    title="Gavin Piliczky | 3D Art"
     description="The professional portfolio of Gavin Piliczky, 3D Generalist and Game Developer."
 >
     <div class="stack gap-20">
