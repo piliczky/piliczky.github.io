@@ -32,6 +32,21 @@ tags:
 
 *Gameplay showing vehicle combat, zombie collisions, skull collection, and upgrades.*
 
+### AVCon Showcase
+
+Our team exhibited Zombie Derby in the AVCon Indie Games Room, where it was the main attraction at our booth. I also showcased my game SWARMEX alongside it, giving attendees the opportunity to play both projects and speak with us about their development.
+
+<div class="stack gap-4">
+    <img
+        src="/assets/Games/Zombie_Derby/AVCon.png"
+        alt="The Zombie Derby development team at their AVCon booth, with Gavin Piliczky pictured on the far right."
+        style="border-radius: 1.5rem; box-shadow: var(--shadow-md);"
+    />
+    <p style="text-align: center; font-style: italic; color: var(--gray-400);">
+        The team exhibiting Zombie Derby and SWARMEX at AVCon. I am pictured on the far right.
+    </p>
+</div>
+
 ### Development Credits
 
 * **Gavin Piliczky:** Lead Game Designer & Programmer
