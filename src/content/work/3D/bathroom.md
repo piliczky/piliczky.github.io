@@ -4,8 +4,9 @@ title: Bathroom
 publishDate: 2026-06-17 00:00:00
 img: /assets/3D/Bathroom/Bathroom_Recreation_Day.png
 img_alt: Bathroom scene recreation created in Unreal Engine as part of a university environment art project.
+img_caption: Final daytime bathroom recreation rendered in Unreal Engine.
 description: |
-    Bathroom Recreation
+    A real-time bathroom recreation built in Unreal Engine from a photographic reference, including custom props and materials.
     
 tags:
 
@@ -19,10 +20,6 @@ tags:
 
 ---
 
-### Original Reference
-
-The original reference image was used throughout the project to guide the composition, lighting direction, material response, and prop placement. The aim was not just to create a bathroom, but to recreate the chosen scene as accurately as possible.
-
 <div class="stack gap-4">
     <img 
         src="/assets/3D/Bathroom/Bathroom_Original.png" 
@@ -33,10 +30,6 @@ The original reference image was used throughout the project to guide the compos
         Original bathroom reference used for the university scene recreation project.
     </p>
 </div>
-
-### Final Daytime Recreation
-
-The final daytime render was created in Unreal Engine and focused on matching the natural lighting, room layout, material colours, and overall feel of the original reference image.
 
 <div class="stack gap-4">
     <img 
@@ -49,13 +42,7 @@ The final daytime render was created in Unreal Engine and focused on matching th
     </p>
 </div>
 
-### Asset Breakdown
-
-Several key props were modelled, UV mapped, textured, and presented as individual turntable renders. These assets were created to support the final bathroom environment and help match the original reference scene.
-
-### Vanity Unit
-
-The vanity unit was one of the main hero assets in the scene. It was created to match the proportions and material feel of the reference, including the wooden cabinet, countertop, sink, and small dressing elements.
+Custom props were modelled, UV mapped, and textured for the final Unreal Engine scene.
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video 
@@ -68,9 +55,7 @@ The vanity unit was one of the main hero assets in the scene. It was created to 
     </video>
 </div>
 
-### Decorative Shelf
-
-This decorative wall shelf was recreated from the original reference image and combines metal and wood materials to help establish the visual style of the environment. The asset was modelled, UV mapped, textured, and presented as an individual turntable render.
+*Turntable of the vanity, sink, countertop, and dressing props.*
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video
@@ -83,9 +68,7 @@ This decorative wall shelf was recreated from the original reference image and c
     </video>
 </div>
 
-### Light Fixture
-
-The light fixture was modelled and textured to match the decorative lighting visible in the reference image. It helped define the style of the scene and contributed to the final daytime presentation.
+*Turntable of the decorative metal-and-wood wall shelf.*
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video 
@@ -98,9 +81,7 @@ The light fixture was modelled and textured to match the decorative lighting vis
     </video>
 </div>
 
-### Jar Prop
-
-The jar was created as a small decorative asset to support the room dressing and help match the details visible in the original reference.
+*Turntable of the custom decorative light fixture.*
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video 
@@ -113,9 +94,7 @@ The jar was created as a small decorative asset to support the room dressing and
     </video>
 </div>
 
-### Heater
-
-The wall-mounted heater was recreated as part of the wider asset set. This prop helped add realism to the bathroom and contributed to the overall scene accuracy.
+*Turntable of a small jar created for the room dressing.*
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <video 
@@ -128,13 +107,11 @@ The wall-mounted heater was recreated as part of the wider asset set. This prop 
     </video>
 </div>
 
+*Turntable of the wall-mounted heater.*
+
 ### Technical Implementation
 
-This project combined environment art, asset creation, material development, and lighting inside Unreal Engine.
-
-* **Reference Matching:** Analysed the original image to recreate the layout, lighting direction, colour palette, and atmosphere as closely as possible.
-* **Custom Props:** Modelled and textured several bathroom assets specifically for this scene, including the vanity, heater, light fixture, jar, and towel rack.
-* **Material Work:** Developed materials for wood, ceramic, metal, glass, tile, and painted surfaces to match the reference image.
-* **Real-Time Presentation:** Assembled, lit, and rendered the final environment inside Unreal Engine for portfolio and university presentation purposes.
-
-The project helped strengthen my understanding of environment recreation, real-time lighting, material authoring, prop modelling, and Unreal Engine presentation workflows.
+- Recreated the layout, lighting, colours, and prop placement from reference.
+- Modelled and textured the vanity, heater, light fixture, jar, towel rack, and other supporting assets.
+- Authored wood, ceramic, metal, glass, tile, and painted materials.
+- Assembled, lit, and rendered the environment in Unreal Engine.

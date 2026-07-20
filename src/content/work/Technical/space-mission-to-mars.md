@@ -4,20 +4,13 @@ publishDate: 2026-04-25 00:00:00
 img: /assets/Tech/Mars/Mars_1.png
 img_alt: A cinematic shot of an astronaut descending toward the Martian surface.
 description: |
-  Space Mission to Mars
-  A short cinematic film created in Unreal Engine 5. This project explores high-end visual effects, Niagara particle systems, and dramatic storytelling through environment design and animation blending.
+  A six-week Unreal Engine 5 cinematic featuring Niagara VFX, planetary environments, spline animation, and character animation blending.
 tags:
   - Unreal Engine 5
   - VFX
   - Cinematics
   - Storytelling
 ---
-
-### Project Overview
-
-**Space Mission to Mars** is a short cinematic film developed over a six-week period as part of my studies at **Flinders University**. What began as a single environment exercise evolved into a complete narrative challenge. 
-
-The film follows an astronaut’s harrowing attempt to land on the Red Planet. When the ship’s engines suffer a catastrophic failure, he is forced to eject and rely solely on his backpack thrusters in a desperate bid for survival.
 
 ### The Short Film
 
@@ -34,9 +27,9 @@ The film follows an astronaut’s harrowing attempt to land on the Red Planet. W
     </iframe>
 </div>
 
-### Behind the Scenes: VFX & Technical Breakdown
+*Completed short film created in Unreal Engine 5.*
 
-To see how the planetary volumes, particle systems, and animation blending were implemented, you can watch the technical breakdown below:
+### Behind the Scenes: VFX & Technical Breakdown
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <iframe 
@@ -51,9 +44,9 @@ To see how the planetary volumes, particle systems, and animation blending were 
     </iframe>
 </div>
 
-### Technical Implementation
+*Breakdown of the environment, VFX, flight paths, and animation systems.*
 
-This project was a deep dive into the cinematic capabilities of **Unreal Engine 5**. Key technical focus areas included:
+### Technical Implementation
 
 * **Niagara VFX:** I created all particle effects from scratch in Niagara, including the engine failure sparks and atmospheric entry effects.
 * **Environment Design:** Mars was constructed as a large-scale sphere utilizing an authentic NASA surface scan, rendered with UE5’s atmospheric volumes for realistic light scattering.

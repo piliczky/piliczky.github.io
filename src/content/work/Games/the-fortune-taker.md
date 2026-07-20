@@ -4,8 +4,7 @@ publishDate: 2026-04-25 00:00:00
 img: /assets/Games/Fortune_Taker/Fortune_Taker_Title.jpg
 img_alt: The unsettling title screen for The Fortune Taker.
 description: |
-  The Fortune Taker
-  A high-stakes, single-player tarot and dice game developed for the Flinders GRL Spooky Game Jam 2025. I served as the Lead Programmer and Concept Designer.
+  A single-player tarot and dice horror game created in two weeks for the Flinders GRL Spooky Game Jam 2025. I was Lead Programmer and Concept Designer.
 tags:
   - Game Development
   - Lead Programmer
@@ -26,12 +25,6 @@ tags:
     </a>
 </div>
 
-### Project Overview
-
-**The Fortune Taker** is a psychological horror card game developed under a strict two-week deadline for the Flinders GRL: Spooky Game Jam 2025. I designed the initial concept and served as the Lead Programmer, focusing on rapid prototyping and the creation of the game's core interactive systems.
-
-Players find themselves in the "Space Between Hours," forced into a cruel game of tarot and bone-casting by the Foremother. Survival depends on tactical planning and the ability to turn a twisted game of fate back on its creator.
-
 ### Official Trailer
 
 <video controls preload="metadata" playsinline style="width:100%; max-width:960px; border-radius: 1.5rem; box-shadow: var(--shadow-lg); margin-top: 1.5rem;">
@@ -44,16 +37,12 @@ Players find themselves in the "Space Between Hours," forced into a cruel game o
 
 ### Technical Implementation
 
-My primary focus was building the underlying systems that defined the game's unique mechanics. Utilizing **Unreal Engine Blueprints**, I developed:
-
 * **Bone-Casting Physics:** A system for rolling "bones" onto a pentagram board where landing locations dynamically activate specific card triggers.
 * **Modular Card Framework:** A flexible architecture that allowed for rapid iteration of card abilities and effects.
 * **State Management:** Handling the complex turn logic between the player and the Foremother’s AI.
 * **Narrative Integration:** Implementing a dialogue system that triggers unique responses from the Foremother based on gameplay events.
 
 ### How to Play
-
-To see these systems in action, including the health mechanics (doll pins and crystal ball flames) and the re-roll logic, view the tutorial below:
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem;">
     <iframe 
@@ -68,14 +57,13 @@ To see these systems in action, including the health mechanics (doll pins and cr
     </iframe>
 </div>
 
-### The Team
+*Gameplay tutorial covering health, card triggers, bone casting, and re-roll mechanics.*
 
-Managing scope was critical for a two-week jam. I worked closely with a multidisciplinary team to ensure technical systems supported the creative vision:
+### The Team
 
 * **Gavin Piliczky:** Lead Programming, Concept Design, Special Effects.
 * **Dennis Feklistov:** Additional Programming, Sound Design, Music.
 * **Millie Doherty:** Object Modeling, Texturing, UI Design.
-
 * **Arien Van Stralen:** Tarot Card Illustration.
 * **Alex Konstandinou:** Character Modeling.
 * **Edith Morris:** Narrative and Dialogue.

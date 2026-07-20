@@ -8,12 +8,21 @@ import CallToAction from '../components/CallToAction.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Filter for 2D projects and sort Newest First
+const projectOrder = [
+    '2D Weapon Concepts',
+    'Pixel Art & Sprite Animation',
+    'Character Art',
+];
+
 const projects = (await getCollection('work'))
     .filter((project) =>
         project.data.tags.includes('2D')
     )
-    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+    .sort(
+        (a, b) =>
+            projectOrder.indexOf(a.data.title) -
+            projectOrder.indexOf(b.data.title)
+    );
 ---
 
 <BaseLayout

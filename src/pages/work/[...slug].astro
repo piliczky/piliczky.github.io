@@ -44,7 +44,13 @@ const { Content } = await render(entry);
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					{entry.data.img_title && <h3>{entry.data.img_title}</h3>}
+					{entry.data.img && (
+						<div class="stack gap-4">
+							<img src={entry.data.img} alt={entry.data.img_alt || ''} />
+							{entry.data.img_caption && <p class="image-caption"><em>{entry.data.img_caption}</em></p>}
+						</div>
+					)}
 					<div class="content">
 						<Content />
 					</div>

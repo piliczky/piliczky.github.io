@@ -2,10 +2,10 @@
 title: Gibson Les Paul Guitar
 publishDate: 2025-06-18 00:00:00
 img: /assets/3D/Gibson_Guitar/Guitar_Render_Final.png
-img_alt: High-quality render of a Gibson Les Paul electric guitar.
+img_alt: Arnold render of a Gibson Les Paul electric guitar.
+img_caption: Final textured render of the Gibson Les Paul, rendered in Arnold.
 description: |
-  Gibson Les Paul Guitar
-  Modeled in Maya and textured in Substance Painter over a six-week period. This project focused on creating a high-fidelity, VFX-quality asset from real-world reference, with no triangle budget constraints.
+  A Gibson Les Paul model created in Maya, textured in Substance Painter and rendered in Arnold.
 tags:
   - 3D Modeling
   - Hard Surface
@@ -13,19 +13,9 @@ tags:
   - Substance Painter
 ---
 
-This Gibson Les Paul model was created over six weeks as part of my advanced modeling studies with CDW Studios and Flinders University.
+![Wireframe overlay showing the guitar's subdivision topology](/assets/3D/Gibson_Guitar/Guitar_Render_Final_Wireframe.png)
 
-The primary goal of this assessment was to recreate a complex, recognizable object with precise detail, using a real Gibson Les Paul as physical and photographic reference. The focus was on capturing accurate proportions and material textures, such as the polished finish of the body and the intricate hardware components.
-
-### High-Fidelity Topology
-
-Unlike typical game assets, there was no triangle limit for this task. This allowed complete freedom regarding topology density. While some areas are considerably higher in detail than strictly necessary for real-time applications, the dense geometry ensures flawless subdivision and reflection quality, resulting in an asset suitable for VFX or film production.
-
-![Wireframe overlay showcasing the dense topology of the high-fidelity model](/assets/3D/Gibson_Guitar/Guitar_Render_Final_Wireframe.png)
-
-### Presentation Experiment
-
-After completing the model and textures, I produced a short 30-second cinematic sequence to showcase the guitar from various angles, reminiscent of a high-end product advertisement. This video wasn’t part of the core assessment; it was a personal experiment to practice advertising-style rendering and dynamic presentation techniques.
+*Wireframe overlay of the subdivision model. This assessment had no real-time triangle limit.*
 
 <div style="aspect-ratio: 16 / 9; width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
     <iframe 
@@ -39,3 +29,11 @@ After completing the model and textures, I produced a short 30-second cinematic 
         style="border-radius: 1.5rem; box-shadow: var(--shadow-lg);">
     </iframe>
 </div>
+
+*A short product-style presentation created after completing the assessment.*
+
+### Summary
+
+- Modelled in Maya, textured in Substance Painter and rendered in Arnold over six weeks.
+- Recreated from a real Gibson Les Paul using physical and photographic reference.
+- Built as a subdivision asset for presentation rather than real-time use.

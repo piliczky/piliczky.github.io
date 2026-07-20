@@ -6,3 +6,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
 	<Hero title="Page Not Found" tagline="Not found" />
 </BaseLayout>
+
+<script is:inline>
+	// Content routes are generated in lowercase. Preserve bookmarks and older
+	// portfolio links that used category names such as "3D".
+	if (window.location.pathname.toLowerCase().startsWith('/work/')) {
+		const normalizedPath = window.location.pathname.toLowerCase();
+		const destination = normalizedPath.endsWith('/')
+			? normalizedPath
+			: `${normalizedPath}/`;
+		if (destination !== window.location.pathname) {
+			window.location.replace(destination);
+		}
+	}
+</script>
