@@ -59,9 +59,33 @@ Custom props were modelled, UV mapped, and textured for the final Unreal Engine 
 
 *Turntable of the decorative metal-and-wood wall shelf.*
 
+### Procedural Tile Materials
+
+I created the bathroom's floor and wall tile materials procedurally in Substance Designer. The node graphs generate the repeating patterns and supporting texture maps used in the Unreal Engine environment.
+
+<div class="stack gap-4">
+    <img
+        src="/assets/3D/Bathroom/Substance_Designer_Floor_Tile_Graph.png"
+        alt="Substance Designer node graph and material preview for the bathroom's decorative patterned floor tiles."
+    />
+    <p style="text-align: center; font-style: italic; color: var(--gray-400);">
+        Procedural floor-tile graph, including the generated repeating pattern and material preview.
+    </p>
+</div>
+
+<div class="stack gap-4">
+    <img
+        src="/assets/3D/Bathroom/Substance_Designer_Wall_Tile_Graph.png"
+        alt="Substance Designer node graph for the bathroom's green wall tile material."
+    />
+    <p style="text-align: center; font-style: italic; color: var(--gray-400);">
+        Procedural wall-tile graph used to generate the green tiled surfaces in the final scene.
+    </p>
+</div>
+
 ### Technical Implementation
 
 - Recreated the layout, lighting, colours, and prop placement from reference.
 - Modelled and textured the vanity, heater, light fixture, jar, towel rack, and other supporting assets.
-- Authored wood, ceramic, metal, glass, tile, and painted materials.
+- Authored wood, ceramic, metal, glass, tile, and painted materials, including procedural floor and wall tiles in Substance Designer.
 - Assembled, lit, and rendered the environment in Unreal Engine.
